@@ -1,0 +1,843 @@
+{
+  "fields": [
+    {
+      "label": "MRN No",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.78,
+      "ocr_confidence": 0.78,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          1204.0,
+          42.0
+        ],
+        [
+          1264.857142857143,
+          42.0
+        ],
+        [
+          1264.857142857143,
+          62.0
+        ],
+        [
+          1204.0,
+          62.0
+        ]
+      ]
+    },
+    {
+      "label": "Date",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.6,
+      "ocr_confidence": 0.6,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          1204.0,
+          78.0
+        ],
+        [
+          1240.8,
+          78.0
+        ],
+        [
+          1240.8,
+          98.0
+        ],
+        [
+          1204.0,
+          98.0
+        ]
+      ]
+    },
+    {
+      "label": "Name",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.99,
+      "ocr_confidence": 0.99,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          65.0,
+          211.0
+        ],
+        [
+          140.60000000000002,
+          211.0
+        ],
+        [
+          140.60000000000002,
+          231.0
+        ],
+        [
+          65.0,
+          231.0
+        ]
+      ]
+    },
+    {
+      "label": "Gender",
+      "detected_type": "gender",
+      "current_value": "Male",
+      "is_required": true,
+      "confidence_score": 0.79,
+      "ocr_confidence": 0.79,
+      "field_detection_confidence": 0.95,
+      "bounding_box": [
+        [
+          1007.0,
+          211.0
+        ],
+        [
+          1080.0,
+          211.0
+        ],
+        [
+          1080.0,
+          231.0
+        ],
+        [
+          1007.0,
+          231.0
+        ]
+      ]
+    },
+    {
+      "label": "Date of Birth",
+      "detected_type": "dob",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.74,
+      "ocr_confidence": 0.74,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          65.0,
+          244.0
+        ],
+        [
+          161.57142857142856,
+          244.0
+        ],
+        [
+          161.57142857142856,
+          264.0
+        ],
+        [
+          65.0,
+          264.0
+        ]
+      ]
+    },
+    {
+      "label": "Age",
+      "detected_type": "age",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.74,
+      "ocr_confidence": 0.74,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          472.0,
+          247.0
+        ],
+        [
+          500.5,
+          247.0
+        ],
+        [
+          500.5,
+          267.0
+        ],
+        [
+          472.0,
+          267.0
+        ]
+      ]
+    },
+    {
+      "label": "Blood Group",
+      "detected_type": "blood_group",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          695.0,
+          244.0
+        ],
+        [
+          790.3333333333334,
+          244.0
+        ],
+        [
+          790.3333333333334,
+          264.0
+        ],
+        [
+          695.0,
+          264.0
+        ]
+      ]
+    },
+    {
+      "label": "Phone Number",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          65.0,
+          278.0
+        ],
+        [
+          177.6153846153846,
+          278.0
+        ],
+        [
+          177.6153846153846,
+          297.0
+        ],
+        [
+          65.0,
+          297.0
+        ]
+      ]
+    },
+    {
+      "label": "Alternate Number",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.9,
+      "ocr_confidence": 0.9,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          575.0,
+          278.0
+        ],
+        [
+          708.6470588235294,
+          278.0
+        ],
+        [
+          708.6470588235294,
+          297.0
+        ],
+        [
+          575.0,
+          297.0
+        ]
+      ]
+    },
+    {
+      "label": "Email ID",
+      "detected_type": "email",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.67,
+      "ocr_confidence": 0.67,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          65.0,
+          311.0
+        ],
+        [
+          128.11111111111111,
+          311.0
+        ],
+        [
+          128.11111111111111,
+          331.0
+        ],
+        [
+          65.0,
+          331.0
+        ]
+      ]
+    },
+    {
+      "label": "Address",
+      "detected_type": "address",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          65.0,
+          342.0
+        ],
+        [
+          127.125,
+          342.0
+        ],
+        [
+          127.125,
+          361.0
+        ],
+        [
+          65.0,
+          361.0
+        ]
+      ]
+    },
+    {
+      "label": "City",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          150.0,
+          375.0
+        ],
+        [
+          182.0,
+          375.0
+        ],
+        [
+          182.0,
+          395.0
+        ],
+        [
+          150.0,
+          395.0
+        ]
+      ]
+    },
+    {
+      "label": "State",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          516.0,
+          375.0
+        ],
+        [
+          557.6666666666666,
+          375.0
+        ],
+        [
+          557.6666666666666,
+          395.0
+        ],
+        [
+          516.0,
+          395.0
+        ]
+      ]
+    },
+    {
+      "label": "Pin Code",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          1002.0,
+          375.0
+        ],
+        [
+          1072.2222222222222,
+          375.0
+        ],
+        [
+          1072.2222222222222,
+          395.0
+        ],
+        [
+          1002.0,
+          395.0
+        ]
+      ]
+    },
+    {
+      "label": "Name",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.74,
+      "ocr_confidence": 0.74,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          65.0,
+          447.0
+        ],
+        [
+          173.0,
+          447.0
+        ],
+        [
+          173.0,
+          466.0
+        ],
+        [
+          65.0,
+          466.0
+        ]
+      ]
+    },
+    {
+      "label": "Relationship",
+      "detected_type": "relationship",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          623.0,
+          447.0
+        ],
+        [
+          717.1538461538462,
+          447.0
+        ],
+        [
+          717.1538461538462,
+          466.0
+        ],
+        [
+          623.0,
+          466.0
+        ]
+      ]
+    },
+    {
+      "label": "Phone Number",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.79,
+      "ocr_confidence": 0.79,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          63.0,
+          475.0
+        ],
+        [
+          177.46153846153845,
+          475.0
+        ],
+        [
+          177.46153846153845,
+          492.0
+        ],
+        [
+          63.0,
+          492.0
+        ]
+      ]
+    },
+    {
+      "label": "Alternate Number",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.85,
+      "ocr_confidence": 0.85,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          623.0,
+          475.0
+        ],
+        [
+          757.5882352941177,
+          475.0
+        ],
+        [
+          757.5882352941177,
+          492.0
+        ],
+        [
+          623.0,
+          492.0
+        ]
+      ]
+    },
+    {
+      "label": "Do you have any known allergies?",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          65.0,
+          546.0
+        ],
+        [
+          323.0,
+          546.0
+        ],
+        [
+          323.0,
+          566.0
+        ],
+        [
+          65.0,
+          566.0
+        ]
+      ]
+    },
+    {
+      "label": "Existing Medica Conditions (if any)",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.83,
+      "ocr_confidence": 0.83,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          65.0,
+          575.0
+        ],
+        [
+          331.38888888888886,
+          571.0
+        ],
+        [
+          331.38888888888886,
+          595.0
+        ],
+        [
+          65.0,
+          594.0
+        ]
+      ]
+    },
+    {
+      "label": "Current Medications (if any)",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.82,
+      "ocr_confidence": 0.82,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          64.0,
+          597.0
+        ],
+        [
+          278.34482758620686,
+          597.0
+        ],
+        [
+          278.34482758620686,
+          624.0
+        ],
+        [
+          64.0,
+          624.0
+        ]
+      ]
+    },
+    {
+      "label": "ID Proof Type",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.73,
+      "ocr_confidence": 0.73,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          63.0,
+          669.0
+        ],
+        [
+          188.1851851851852,
+          669.0
+        ],
+        [
+          188.1851851851852,
+          689.0
+        ],
+        [
+          63.0,
+          689.0
+        ]
+      ]
+    },
+    {
+      "label": "Other",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          864.0,
+          669.0
+        ],
+        [
+          908.1666666666666,
+          669.0
+        ],
+        [
+          908.1666666666666,
+          689.0
+        ],
+        [
+          864.0,
+          689.0
+        ]
+      ]
+    },
+    {
+      "label": "ID Proof Number",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          63.0,
+          697.0
+        ],
+        [
+          191.4375,
+          697.0
+        ],
+        [
+          191.4375,
+          717.0
+        ],
+        [
+          63.0,
+          717.0
+        ]
+      ]
+    },
+    {
+      "label": "Date",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.96,
+      "ocr_confidence": 0.96,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          631.0,
+          818.0
+        ],
+        [
+          667.0,
+          818.0
+        ],
+        [
+          667.0,
+          838.0
+        ],
+        [
+          631.0,
+          838.0
+        ]
+      ]
+    }
+  ],
+  "full_text": "Relationship: No Department: Existing Medica Other Yes (DD Signature: Passport State: Yes Pin Code: Other: No Gender: Insurance: ID Proof Number: understand that providing 110001 City: Phone Number: Blood Group: PATIENT REGISTRATION FORM Address: FOR HOSPITAL USE ONLY Do you have any known allergies? MM Registered By: Full Name: 3. MEDICAL INFORMATION 2. EMERGENCY CONTACT Date: incorrect information may affect my treatment: 1. PERSONAL INFORMATION PAN Card Alternate Number: 5. DECLARATION 4. IDENTIFICATION DETAILS wwwcitylifehospital.com Alternate Number: Female Current Medications (if any): hereby declare that the above information is true and correct to the best of my knowledge: info@citylifehospital.com HOSPITAL Phone Number: MRN No: Please fill in the details in BLOCK LETTERS and submit at the reception desk ID Proof Type: Remarks: Age: Contact Name: If Yes, please specify: Date of Birth: City LIFE Driving License Aadhaar Card Email ID: 123, Health Care Street; New Delhi Conditions (if any): Compassionate Care, Always Date: Male +91 11 1234 5678 YyyY)",
+  "extra_data": {
+    "extracted_documents": [
+      {
+        "name": "Aadhaar Card",
+        "hint": "Extracted from Identification Details form checklist/options"
+      },
+      {
+        "name": "PAN Card",
+        "hint": "Extracted from Identification Details form checklist/options"
+      },
+      {
+        "name": "Passport",
+        "hint": "Extracted from Identification Details form checklist/options"
+      },
+      {
+        "name": "Driving License",
+        "hint": "Extracted from Identification Details form checklist/options"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Personal Information",
+        "bounding_box": [
+          [
+            73.0,
+            173.0
+          ],
+          [
+            303.0,
+            173.0
+          ],
+          [
+            303.0,
+            193.0
+          ],
+          [
+            73.0,
+            193.0
+          ]
+        ]
+      },
+      {
+        "title": "Emergency Contact",
+        "bounding_box": [
+          [
+            72.0,
+            412.0
+          ],
+          [
+            286.0,
+            412.0
+          ],
+          [
+            286.0,
+            437.0
+          ],
+          [
+            72.0,
+            437.0
+          ]
+        ]
+      },
+      {
+        "title": "Medical Information",
+        "bounding_box": [
+          [
+            73.0,
+            513.0
+          ],
+          [
+            295.0,
+            513.0
+          ],
+          [
+            295.0,
+            533.0
+          ],
+          [
+            73.0,
+            533.0
+          ]
+        ]
+      },
+      {
+        "title": "Identification Details",
+        "bounding_box": [
+          [
+            73.0,
+            641.0
+          ],
+          [
+            297.0,
+            641.0
+          ],
+          [
+            297.0,
+            661.0
+          ],
+          [
+            73.0,
+            661.0
+          ]
+        ]
+      },
+      {
+        "title": "Declaration",
+        "bounding_box": [
+          [
+            69.0,
+            730.0
+          ],
+          [
+            209.0,
+            730.0
+          ],
+          [
+            209.0,
+            754.0
+          ],
+          [
+            69.0,
+            754.0
+          ]
+        ]
+      },
+      {
+        "title": "For Hospital Use Only",
+        "bounding_box": [
+          [
+            79.0,
+            863.0
+          ],
+          [
+            288.0,
+            863.0
+          ],
+          [
+            288.0,
+            887.0
+          ],
+          [
+            79.0,
+            887.0
+          ]
+        ]
+      }
+    ],
+    "ocr_accuracy": 0.87,
+    "field_detection": 0.95,
+    "field_mapping": 0.61,
+    "classification_stats": {
+      "TOTAL_OCR_BLOCKS": 61,
+      "FIELD_LABEL": 25,
+      "SECTION_HEADER": 12,
+      "INSTRUCTION": 1,
+      "DECLARATION": 3,
+      "CHECKLIST_ITEM": 4,
+      "OFFICE_USE_ONLY": 10,
+      "SAMPLE_VALUE": 0,
+      "SIGNATURE_AREA": 1,
+      "UNKNOWN": 5
+    }
+  }
+}

@@ -1,0 +1,116 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,700;0,900;1,300;1,700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+@theme {
+  --color-paper: #F7F3ED;
+  --color-paper-dark: #EFE9E0;
+  --color-paper-darker: #E5DDD1;
+  --color-teal: #0D5C63;
+  --color-teal-dark: #0A4A50;
+  --color-teal-light: #E3F2F3;
+  --color-teal-medium: #1A7A83;
+  --color-saffron: #F4A024;
+  --color-saffron-light: #FEF5E7;
+  --color-saffron-dark: #D4841A;
+  --color-ink: #1A1208;
+  --color-ink-medium: #4A3F30;
+  --color-ink-light: #8A7D6A;
+  --color-ink-pale: #C4B8A8;
+  --color-red: #C0392B;
+  --color-red-light: #FDECEA;
+  --color-green: #1E7B3A;
+  --color-green-light: #EBF7EE;
+  
+  --font-sans: "DM Sans", sans-serif;
+  --font-serif: Fraunces, serif;
+  --font-mono: "DM Mono", monospace;
+  
+  --shadow-sm-custom: 0 1px 3px rgba(26,18,8,0.08);
+  --shadow-custom: 0 3px 14px rgba(26,18,8,0.10);
+  --shadow-lg-custom: 0 8px 32px rgba(26,18,8,0.14);
+}
+
+@utility shadow-sm-custom {
+  box-shadow: var(--shadow-sm-custom);
+}
+
+@utility shadow-custom {
+  box-shadow: var(--shadow-custom);
+}
+
+@utility shadow-lg-custom {
+  box-shadow: var(--shadow-lg-custom);
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #E5DDD1;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C4B8A8;
+}
+
+/* Hero watermark ruled lines */
+.ruled-watermark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 31px,
+    rgba(255, 255, 255, 0.04) 31px,
+    rgba(255, 255, 255, 0.04) 32px
+  );
+  pointer-events: none;
+}
+
+/* Smart Assistant UX Redesign Animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0px rgba(13, 92, 99, 0.4), var(--shadow-sm-custom);
+    border-color: var(--color-teal);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(13, 92, 99, 0.25), var(--shadow-custom);
+    border-color: var(--color-teal-medium);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+@keyframes slide-up-cascade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up-cascade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+

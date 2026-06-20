@@ -1,0 +1,1364 @@
+{
+  "fields": [
+    {
+      "label": "Application No",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.78,
+      "ocr_confidence": 0.78,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          1164.0,
+          43.0
+        ],
+        [
+          1251.7333333333333,
+          43.0
+        ],
+        [
+          1251.7333333333333,
+          61.0
+        ],
+        [
+          1164.0,
+          61.0
+        ]
+      ],
+      "section_title": "General",
+      "nearby_ocr_text": "BRIGHT FUTURE COLLEGE | STUDENT ADMISSION FORM | Inspiring Futures, Building Careers"
+    },
+    {
+      "label": "Full Name (As per Marksheet)",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.84,
+      "ocr_confidence": 0.84,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          35.0,
+          182.0
+        ],
+        [
+          246.44827586206898,
+          182.0
+        ],
+        [
+          246.44827586206898,
+          207.0
+        ],
+        [
+          35.0,
+          207.0
+        ]
+      ],
+      "section_title": "Personal Information",
+      "nearby_ocr_text": "PERSONAL INFORMATION | Gender: | Male | Female | Other | Date of Birth: | Nationality: | Category: | General OBC Osc Ost | Other"
+    },
+    {
+      "label": "Gender",
+      "detected_type": "gender",
+      "current_value": "Male",
+      "is_required": true,
+      "confidence_score": 0.69,
+      "ocr_confidence": 0.69,
+      "field_detection_confidence": 0.95,
+      "bounding_box": [
+        [
+          826.0,
+          185.0
+        ],
+        [
+          879.1428571428571,
+          185.0
+        ],
+        [
+          879.1428571428571,
+          204.0
+        ],
+        [
+          826.0,
+          204.0
+        ]
+      ],
+      "section_title": "Personal Information",
+      "nearby_ocr_text": "PERSONAL INFORMATION | Full Name (As per Marksheet): | Male | Female | Other | Date of Birth: | Nationality: | Category: | General OBC Osc Ost | Other"
+    },
+    {
+      "label": "Date of Birth",
+      "detected_type": "dob",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          36.0,
+          220.0
+        ],
+        [
+          127.0,
+          220.0
+        ],
+        [
+          127.0,
+          241.0
+        ],
+        [
+          36.0,
+          241.0
+        ]
+      ],
+      "section_title": "Personal Information",
+      "nearby_ocr_text": "Full Name (As per Marksheet): | Gender: | Male | Female | Other | Nationality: | Category: | General OBC Osc Ost | Other | (DD MM/YyyY)"
+    },
+    {
+      "label": "Nationality",
+      "detected_type": "nationality",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          445.0,
+          223.0
+        ],
+        [
+          523.8333333333334,
+          223.0
+        ],
+        [
+          523.8333333333334,
+          241.0
+        ],
+        [
+          445.0,
+          241.0
+        ]
+      ],
+      "section_title": "Personal Information",
+      "nearby_ocr_text": "Full Name (As per Marksheet): | Gender: | Male | Female | Other | Date of Birth: | Category: | General OBC Osc Ost | Other | (DD MM/YyyY)"
+    },
+    {
+      "label": "Category",
+      "detected_type": "name",
+      "current_value": "General OBC Osc Ost",
+      "is_required": true,
+      "confidence_score": 0.82,
+      "ocr_confidence": 0.82,
+      "field_detection_confidence": 0.95,
+      "bounding_box": [
+        [
+          826.0,
+          223.0
+        ],
+        [
+          936.8965517241379,
+          217.0
+        ],
+        [
+          936.8965517241379,
+          242.0
+        ],
+        [
+          826.0,
+          244.0
+        ]
+      ],
+      "section_title": "Personal Information",
+      "nearby_ocr_text": "Full Name (As per Marksheet): | Gender: | Male | Female | Other | Date of Birth: | Nationality: | General OBC Osc Ost | Other | (DD MM/YyyY)"
+    },
+    {
+      "label": "Mobile Number",
+      "detected_type": "mobile",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          36.0,
+          272.0
+        ],
+        [
+          143.71428571428572,
+          272.0
+        ],
+        [
+          143.71428571428572,
+          290.0
+        ],
+        [
+          36.0,
+          290.0
+        ]
+      ],
+      "section_title": "Personal Information",
+      "nearby_ocr_text": "(DD MM/YyyY) | Email ID: | Aadhar Number: | Alternative | Contact Number:"
+    },
+    {
+      "label": "Email ID",
+      "detected_type": "email",
+      "current_value": "Alternative",
+      "is_required": true,
+      "confidence_score": 0.85,
+      "ocr_confidence": 0.85,
+      "field_detection_confidence": 0.8,
+      "bounding_box": [
+        [
+          499.0,
+          272.0
+        ],
+        [
+          556.7777777777778,
+          272.0
+        ],
+        [
+          556.7777777777778,
+          290.0
+        ],
+        [
+          499.0,
+          290.0
+        ]
+      ],
+      "section_title": "Personal Information",
+      "nearby_ocr_text": "(DD MM/YyyY) | Mobile Number: | Aadhar Number: | Alternative | Contact Number:"
+    },
+    {
+      "label": "Aadhar Number",
+      "detected_type": "aadhaar",
+      "current_value": "Correspondence",
+      "is_required": true,
+      "confidence_score": 0.82,
+      "ocr_confidence": 0.82,
+      "field_detection_confidence": 0.8,
+      "bounding_box": [
+        [
+          36.0,
+          307.0
+        ],
+        [
+          146.5,
+          307.0
+        ],
+        [
+          146.5,
+          325.0
+        ],
+        [
+          36.0,
+          325.0
+        ]
+      ],
+      "section_title": "Personal Information",
+      "nearby_ocr_text": "Mobile Number: | Email ID: | Alternative | Contact Number: | Correspondence | Address:"
+    },
+    {
+      "label": "Contact Number",
+      "detected_type": "mobile",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          499.0,
+          307.0
+        ],
+        [
+          696.4074074074074,
+          307.0
+        ],
+        [
+          696.4074074074074,
+          325.0
+        ],
+        [
+          499.0,
+          325.0
+        ]
+      ],
+      "section_title": "Personal Information",
+      "nearby_ocr_text": "Mobile Number: | Email ID: | Aadhar Number: | Alternative | Correspondence | Address:"
+    },
+    {
+      "label": "Address",
+      "detected_type": "address",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.77,
+      "ocr_confidence": 0.77,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          36.0,
+          340.0
+        ],
+        [
+          216.7826086956522,
+          340.0
+        ],
+        [
+          216.7826086956522,
+          358.0
+        ],
+        [
+          36.0,
+          358.0
+        ]
+      ],
+      "section_title": "Personal Information",
+      "nearby_ocr_text": "Aadhar Number: | Alternative | Contact Number: | Correspondence | City: | State: | Pin Code:"
+    },
+    {
+      "label": "City",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.92,
+      "ocr_confidence": 0.92,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          34.0,
+          372.0
+        ],
+        [
+          65.2,
+          372.0
+        ],
+        [
+          65.2,
+          393.0
+        ],
+        [
+          34.0,
+          393.0
+        ]
+      ],
+      "section_title": "Personal Information",
+      "nearby_ocr_text": "Correspondence | Address: | State: | Pin Code: | 2. PARENT / GUARDIAN INFORMATION"
+    },
+    {
+      "label": "State",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          492.0,
+          375.0
+        ],
+        [
+          532.0,
+          375.0
+        ],
+        [
+          532.0,
+          393.0
+        ],
+        [
+          492.0,
+          393.0
+        ]
+      ],
+      "section_title": "Personal Information",
+      "nearby_ocr_text": "Correspondence | Address: | City: | Pin Code: | 2. PARENT / GUARDIAN INFORMATION"
+    },
+    {
+      "label": "Pin Code",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          968.0,
+          375.0
+        ],
+        [
+          1032.0,
+          375.0
+        ],
+        [
+          1032.0,
+          393.0
+        ],
+        [
+          968.0,
+          393.0
+        ]
+      ],
+      "section_title": "Personal Information",
+      "nearby_ocr_text": "Correspondence | Address: | City: | State: | 2. PARENT / GUARDIAN INFORMATION"
+    },
+    {
+      "label": "Father's Guardian's",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.84,
+      "ocr_confidence": 0.84,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          36.0,
+          449.0
+        ],
+        [
+          226.07999999999998,
+          449.0
+        ],
+        [
+          226.07999999999998,
+          468.0
+        ],
+        [
+          36.0,
+          468.0
+        ]
+      ],
+      "section_title": "2. Parent / Guardian Information",
+      "nearby_ocr_text": "2. PARENT / GUARDIAN INFORMATION | Name: | Occupation: | Mobile Number: | Email ID: | Annual Income:"
+    },
+    {
+      "label": "Name",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.84,
+      "ocr_confidence": 0.84,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          36.0,
+          449.0
+        ],
+        [
+          226.07999999999998,
+          449.0
+        ],
+        [
+          226.07999999999998,
+          468.0
+        ],
+        [
+          36.0,
+          468.0
+        ]
+      ],
+      "section_title": "2. Parent / Guardian Information",
+      "nearby_ocr_text": "2. PARENT / GUARDIAN INFORMATION | Father's Guardian's | Occupation: | Mobile Number: | Email ID: | Annual Income:"
+    },
+    {
+      "label": "Occupation",
+      "detected_type": "occupation",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          788.0,
+          449.0
+        ],
+        [
+          870.7272727272727,
+          449.0
+        ],
+        [
+          870.7272727272727,
+          470.0
+        ],
+        [
+          788.0,
+          470.0
+        ]
+      ],
+      "section_title": "2. Parent / Guardian Information",
+      "nearby_ocr_text": "2. PARENT / GUARDIAN INFORMATION | Father's Guardian's | Name: | Mobile Number: | Email ID: | Annual Income:"
+    },
+    {
+      "label": "Mobile Number",
+      "detected_type": "mobile",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.76,
+      "ocr_confidence": 0.76,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          36.0,
+          482.0
+        ],
+        [
+          143.71428571428572,
+          482.0
+        ],
+        [
+          143.71428571428572,
+          501.0
+        ],
+        [
+          36.0,
+          501.0
+        ]
+      ],
+      "section_title": "2. Parent / Guardian Information",
+      "nearby_ocr_text": "Father's Guardian's | Name: | Occupation: | Email ID: | Annual Income: | Mother's | Name: | Occupation:"
+    },
+    {
+      "label": "Email ID",
+      "detected_type": "email",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          480.0,
+          481.0
+        ],
+        [
+          543.1111111111111,
+          481.0
+        ],
+        [
+          543.1111111111111,
+          505.0
+        ],
+        [
+          480.0,
+          505.0
+        ]
+      ],
+      "section_title": "2. Parent / Guardian Information",
+      "nearby_ocr_text": "Father's Guardian's | Name: | Occupation: | Mobile Number: | Annual Income: | Mother's | Name: | Occupation:"
+    },
+    {
+      "label": "Annual Income",
+      "detected_type": "income",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.98,
+      "ocr_confidence": 0.98,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          968.0,
+          485.0
+        ],
+        [
+          1073.857142857143,
+          485.0
+        ],
+        [
+          1073.857142857143,
+          501.0
+        ],
+        [
+          968.0,
+          501.0
+        ]
+      ],
+      "section_title": "2. Parent / Guardian Information",
+      "nearby_ocr_text": "Father's Guardian's | Name: | Occupation: | Mobile Number: | Email ID: | Mother's | Name: | Occupation:"
+    },
+    {
+      "label": "Mother's",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.68,
+      "ocr_confidence": 0.68,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          36.0,
+          517.0
+        ],
+        [
+          143.71428571428572,
+          517.0
+        ],
+        [
+          143.71428571428572,
+          536.0
+        ],
+        [
+          36.0,
+          536.0
+        ]
+      ],
+      "section_title": "2. Parent / Guardian Information",
+      "nearby_ocr_text": "Mobile Number: | Email ID: | Annual Income: | Name: | Occupation: | Mobile Number: | Email ID:"
+    },
+    {
+      "label": "Name",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.68,
+      "ocr_confidence": 0.68,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          36.0,
+          517.0
+        ],
+        [
+          143.71428571428572,
+          517.0
+        ],
+        [
+          143.71428571428572,
+          536.0
+        ],
+        [
+          36.0,
+          536.0
+        ]
+      ],
+      "section_title": "2. Parent / Guardian Information",
+      "nearby_ocr_text": "Mobile Number: | Email ID: | Annual Income: | Mother's | Occupation: | Mobile Number: | Email ID:"
+    },
+    {
+      "label": "Occupation",
+      "detected_type": "occupation",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          788.0,
+          517.0
+        ],
+        [
+          870.7272727272727,
+          517.0
+        ],
+        [
+          870.7272727272727,
+          538.0
+        ],
+        [
+          788.0,
+          538.0
+        ]
+      ],
+      "section_title": "2. Parent / Guardian Information",
+      "nearby_ocr_text": "Mobile Number: | Email ID: | Annual Income: | Mother's | Name: | Mobile Number: | Email ID:"
+    },
+    {
+      "label": "Mobile Number",
+      "detected_type": "mobile",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.94,
+      "ocr_confidence": 0.94,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          36.0,
+          550.0
+        ],
+        [
+          143.71428571428572,
+          550.0
+        ],
+        [
+          143.71428571428572,
+          568.0
+        ],
+        [
+          36.0,
+          568.0
+        ]
+      ],
+      "section_title": "2. Parent / Guardian Information",
+      "nearby_ocr_text": "Mother's | Name: | Occupation: | Email ID: | Address (if different from above):"
+    },
+    {
+      "label": "Email ID",
+      "detected_type": "email",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.98,
+      "ocr_confidence": 0.98,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          481.0,
+          547.0
+        ],
+        [
+          543.2222222222222,
+          547.0
+        ],
+        [
+          543.2222222222222,
+          572.0
+        ],
+        [
+          481.0,
+          572.0
+        ]
+      ],
+      "section_title": "2. Parent / Guardian Information",
+      "nearby_ocr_text": "Mother's | Name: | Occupation: | Mobile Number: | Address (if different from above):"
+    },
+    {
+      "label": "Address (if different from above)",
+      "detected_type": "address",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.91,
+      "ocr_confidence": 0.91,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          36.0,
+          580.0
+        ],
+        [
+          268.94117647058823,
+          580.0
+        ],
+        [
+          268.94117647058823,
+          601.0
+        ],
+        [
+          36.0,
+          601.0
+        ]
+      ],
+      "section_title": "2. Parent / Guardian Information",
+      "nearby_ocr_text": "Mobile Number: | Email ID: | 3. ACADEMIC INFORMATION | 4. DOCUMENTS UPLOADED (Please V) | 5. DECLARATION"
+    },
+    {
+      "label": "Course Applied For",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.93,
+      "ocr_confidence": 0.93,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          36.0,
+          660.0
+        ],
+        [
+          172.42105263157893,
+          660.0
+        ],
+        [
+          172.42105263157893,
+          680.0
+        ],
+        [
+          36.0,
+          680.0
+        ]
+      ],
+      "section_title": "Academic Information",
+      "nearby_ocr_text": "3. ACADEMIC INFORMATION | 4. DOCUMENTS UPLOADED (Please V) | 5. DECLARATION | l0th Marksheet | hereby declare that all the information | Program Type: | Undergraduate | Postgraduate | Diploma | Other | l2th Marksheet | provided above is true and correct to"
+    },
+    {
+      "label": "Program Type",
+      "detected_type": "name",
+      "current_value": "Undergraduate",
+      "is_required": true,
+      "confidence_score": 0.85,
+      "ocr_confidence": 0.85,
+      "field_detection_confidence": 0.88,
+      "bounding_box": [
+        [
+          34.0,
+          689.0
+        ],
+        [
+          135.53846153846155,
+          689.0
+        ],
+        [
+          135.53846153846155,
+          713.0
+        ],
+        [
+          34.0,
+          713.0
+        ]
+      ],
+      "section_title": "Academic Information",
+      "nearby_ocr_text": "Course Applied For: | l0th Marksheet | hereby declare that all the information | Undergraduate | Postgraduate | Diploma | Other | l2th Marksheet | provided above is true and correct to | Stream Specialization: | Graduation Marksheet | the best of my knowledge: | understand"
+    },
+    {
+      "label": "Stream Specialization",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.89,
+      "ocr_confidence": 0.89,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          36.0,
+          718.0
+        ],
+        [
+          200.1818181818182,
+          718.0
+        ],
+        [
+          200.1818181818182,
+          739.0
+        ],
+        [
+          36.0,
+          737.0
+        ]
+      ],
+      "section_title": "Academic Information",
+      "nearby_ocr_text": "Program Type: | Undergraduate | Postgraduate | Diploma | Other | l2th Marksheet | provided above is true and correct to | Graduation Marksheet | the best of my knowledge: | understand | Name of Last School College Attended: | Transfer Certificate | that any false information may lead to"
+    },
+    {
+      "label": "the best of my knowledge",
+      "detected_type": "name",
+      "current_value": "understand",
+      "is_required": true,
+      "confidence_score": 0.96,
+      "ocr_confidence": 0.96,
+      "field_detection_confidence": 0.95,
+      "bounding_box": [
+        [
+          1073.0,
+          714.0
+        ],
+        [
+          1258.3333333333333,
+          716.0
+        ],
+        [
+          1258.3333333333333,
+          732.0
+        ],
+        [
+          1073.0,
+          734.0
+        ]
+      ],
+      "section_title": "Academic Information",
+      "nearby_ocr_text": "Program Type: | Undergraduate | Postgraduate | Diploma | Other | l2th Marksheet | provided above is true and correct to | Stream Specialization: | Graduation Marksheet | understand | Name of Last School College Attended: | Transfer Certificate | that any false information may lead to"
+    },
+    {
+      "label": "Name of Last School College Attended",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.87,
+      "ocr_confidence": 0.87,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          36.0,
+          749.0
+        ],
+        [
+          322.05405405405406,
+          749.0
+        ],
+        [
+          322.05405405405406,
+          769.0
+        ],
+        [
+          36.0,
+          767.0
+        ]
+      ],
+      "section_title": "Academic Information",
+      "nearby_ocr_text": "Stream Specialization: | Graduation Marksheet | the best of my knowledge: | understand | Transfer Certificate | that any false information may lead to | cancellation of my admission:"
+    },
+    {
+      "label": "cancellation of my admission",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.89,
+      "ocr_confidence": 0.89,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          1073.0,
+          760.0
+        ],
+        [
+          1278.655172413793,
+          760.0
+        ],
+        [
+          1278.655172413793,
+          781.0
+        ],
+        [
+          1073.0,
+          781.0
+        ]
+      ],
+      "section_title": "Academic Information",
+      "nearby_ocr_text": "Name of Last School College Attended: | Transfer Certificate | that any false information may lead to | Board | University: | Year of | Passing: | Migration Certificate"
+    },
+    {
+      "label": "Board",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.97,
+      "ocr_confidence": 0.97,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          36.0,
+          777.0
+        ],
+        [
+          164.94117647058823,
+          775.0
+        ],
+        [
+          164.94117647058823,
+          799.0
+        ],
+        [
+          36.0,
+          795.0
+        ]
+      ],
+      "section_title": "Academic Information",
+      "nearby_ocr_text": "cancellation of my admission: | University: | Year of | Passing: | Migration Certificate | Percentage / | CGPA: | Character Certificate"
+    },
+    {
+      "label": "University",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.97,
+      "ocr_confidence": 0.97,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          36.0,
+          777.0
+        ],
+        [
+          164.94117647058823,
+          775.0
+        ],
+        [
+          164.94117647058823,
+          799.0
+        ],
+        [
+          36.0,
+          795.0
+        ]
+      ],
+      "section_title": "Academic Information",
+      "nearby_ocr_text": "cancellation of my admission: | Board | Year of | Passing: | Migration Certificate | Percentage / | CGPA: | Character Certificate"
+    },
+    {
+      "label": "Year of",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.89,
+      "ocr_confidence": 0.89,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          479.0,
+          773.0
+        ],
+        [
+          589.625,
+          773.0
+        ],
+        [
+          589.625,
+          798.0
+        ],
+        [
+          479.0,
+          798.0
+        ]
+      ],
+      "section_title": "Academic Information",
+      "nearby_ocr_text": "cancellation of my admission: | Board | University: | Passing: | Migration Certificate | Percentage / | CGPA: | Character Certificate"
+    },
+    {
+      "label": "Passing",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.89,
+      "ocr_confidence": 0.89,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          479.0,
+          773.0
+        ],
+        [
+          589.625,
+          773.0
+        ],
+        [
+          589.625,
+          798.0
+        ],
+        [
+          479.0,
+          798.0
+        ]
+      ],
+      "section_title": "Academic Information",
+      "nearby_ocr_text": "cancellation of my admission: | Board | University: | Year of | Migration Certificate | Percentage / | CGPA: | Character Certificate"
+    },
+    {
+      "label": "Percentage /",
+      "detected_type": "percentage",
+      "current_value": "Examination",
+      "is_required": true,
+      "confidence_score": 0.96,
+      "ocr_confidence": 0.96,
+      "field_detection_confidence": 0.8,
+      "bounding_box": [
+        [
+          35.0,
+          801.0
+        ],
+        [
+          172.88888888888889,
+          801.0
+        ],
+        [
+          172.88888888888889,
+          829.0
+        ],
+        [
+          35.0,
+          829.0
+        ]
+      ],
+      "section_title": "Academic Information",
+      "nearby_ocr_text": "Board | University: | Year of | Passing: | Migration Certificate | CGPA: | Character Certificate | Examination | Board / University | Year of Passing Percentage CGPA | Aadhaar Card | Signature of Applicant"
+    },
+    {
+      "label": "CGPA",
+      "detected_type": "cgpa",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.92,
+      "ocr_confidence": 0.92,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          35.0,
+          801.0
+        ],
+        [
+          172.88888888888889,
+          801.0
+        ],
+        [
+          172.88888888888889,
+          829.0
+        ],
+        [
+          35.0,
+          829.0
+        ]
+      ],
+      "section_title": "Academic Information",
+      "nearby_ocr_text": "Board | University: | Year of | Passing: | Migration Certificate | Percentage / | Character Certificate | Examination | Board / University | Year of Passing Percentage CGPA | Aadhaar Card | Signature of Applicant"
+    },
+    {
+      "label": "Board / University",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.99,
+      "ocr_confidence": 0.99,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          272.0,
+          835.0
+        ],
+        [
+          387.0,
+          835.0
+        ],
+        [
+          387.0,
+          855.0
+        ],
+        [
+          272.0,
+          855.0
+        ]
+      ],
+      "section_title": "Academic Information",
+      "nearby_ocr_text": "Percentage / | CGPA: | Character Certificate | Examination | Year of Passing Percentage CGPA | Aadhaar Card | Signature of Applicant | loth Equivalent | Passport Size Photo"
+    },
+    {
+      "label": "Year of Passing Percentage CGPA",
+      "detected_type": "cgpa",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 0.99,
+      "ocr_confidence": 0.99,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          435.0,
+          835.0
+        ],
+        [
+          694.0,
+          835.0
+        ],
+        [
+          694.0,
+          853.0
+        ],
+        [
+          435.0,
+          853.0
+        ]
+      ],
+      "section_title": "Academic Information",
+      "nearby_ocr_text": "Percentage / | CGPA: | Character Certificate | Examination | Board / University | Aadhaar Card | Signature of Applicant | loth Equivalent | Passport Size Photo"
+    },
+    {
+      "label": "Date",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          1073.0,
+          914.0
+        ],
+        [
+          1106.6,
+          914.0
+        ],
+        [
+          1106.6,
+          933.0
+        ],
+        [
+          1073.0,
+          933.0
+        ]
+      ],
+      "section_title": "Academic Information",
+      "nearby_ocr_text": "12' Equivalent | Category Certificate (if applicable) | Graduation (if applicable) | Post Graduation (if applicable) | Other: | (DD MM YYYY)"
+    },
+    {
+      "label": "Other",
+      "detected_type": "name",
+      "current_value": null,
+      "is_required": true,
+      "confidence_score": 1.0,
+      "ocr_confidence": 1.0,
+      "field_detection_confidence": 0.6,
+      "bounding_box": [
+        [
+          791.0,
+          926.0
+        ],
+        [
+          831.0,
+          926.0
+        ],
+        [
+          831.0,
+          945.0
+        ],
+        [
+          791.0,
+          945.0
+        ]
+      ],
+      "section_title": "Academic Information",
+      "nearby_ocr_text": "Graduation (if applicable) | Date: | Post Graduation (if applicable) | (DD MM YYYY) | FOR OFFICE USE ONLY"
+    }
+  ],
+  "full_text": "Rejected understand Equivalent Undergraduate Percentage General Equivalent Stream Postgraduate Board New Delhi Yes Other Remarks: Examination State: Graduation (if applicable) Category: No (DD Pin Code: Other: Occupation: Occupation: Transfer Certificate Mobile Number: Other CGPA Character Certificate Nationality: Email ID: Reviewed By: 011- Date: Approved Date of Birth: Other Post Graduation (if applicable) Signature of Applicant Alternative Contact Number: FOR OFFICE USE ONLY 110001 Graduation Marksheet 2. PARENT / GUARDIAN INFORMATION 20_ Board / University Email ID: 123, College Road, Knowledge Annual Income: BRIGHT FUTURE COLLEGE Guardian's Name: College Attended: 5. DECLARATION Year of Passing hereby declare that all the information MM Aadhaar Card Authorized Signature: University: Mobile Number: Course Applied For: loth (DD City: the best of my knowledge: Admission Status: Percentage / CGPA: OBC Address (if different from above): Date: wwwbrightfuturecollege eduin cancellation of my admission: Year of Passing: Aadhar Number: Female Ost Migration Certificate YYYY) Passport Size Photo Full Name (As per Marksheet): 3. ACADEMIC INFORMATION PERSONAL INFORMATION that any false information may lead to provided above is true and correct to Category Certificate (if applicable) l2th Marksheet Specialization: Verified Documents: Gender: Application No: Name of Last School STUDENT ADMISSION FORM Correspondence Address: Mobile Number: Inspiring Futures, Building Careers (For Office Use Only) 4. DOCUMENTS UPLOADED (Please V) admissions@brightfuturecollege edu.in Program Type: Father's Email ID: Mother's Name: l0th Marksheet Academic Year: 20_ 12' Male Diploma Osc -1234 5678 MM/YyyY) ESTD_2ooS city; E",
+  "extra_data": {
+    "extracted_documents": [
+      {
+        "name": "l0th Marksheet",
+        "hint": "Extracted from Academic Information form checklist/options"
+      },
+      {
+        "name": "l2th Marksheet",
+        "hint": "Extracted from Academic Information form checklist/options"
+      },
+      {
+        "name": "Graduation Marksheet",
+        "hint": "Extracted from Academic Information form checklist/options"
+      },
+      {
+        "name": "Transfer Certificate",
+        "hint": "Extracted from Academic Information form checklist/options"
+      },
+      {
+        "name": "Migration Certificate",
+        "hint": "Extracted from Academic Information form checklist/options"
+      },
+      {
+        "name": "Character Certificate",
+        "hint": "Extracted from Academic Information form checklist/options"
+      },
+      {
+        "name": "Aadhaar Card",
+        "hint": "Extracted from Academic Information form checklist/options"
+      },
+      {
+        "name": "Passport Size Photo",
+        "hint": "Extracted from Academic Information form checklist/options"
+      },
+      {
+        "name": "Category Certificate (if applicable)",
+        "hint": "Extracted from Academic Information form checklist/options"
+      }
+    ],
+    "sections": [
+      {
+        "title": "For Office Use Only",
+        "bounding_box": [
+          [
+            639.0,
+            83.0
+          ],
+          [
+            760.1363636363636,
+            83.0
+          ],
+          [
+            760.1363636363636,
+            103.0
+          ],
+          [
+            639.0,
+            103.0
+          ]
+        ]
+      },
+      {
+        "title": "Personal Information",
+        "bounding_box": [
+          [
+            62.0,
+            146.0
+          ],
+          [
+            248.0,
+            146.0
+          ],
+          [
+            248.0,
+            164.0
+          ],
+          [
+            62.0,
+            164.0
+          ]
+        ]
+      },
+      {
+        "title": "2. Parent / Guardian Information",
+        "bounding_box": [
+          [
+            44.0,
+            411.0
+          ],
+          [
+            317.0,
+            411.0
+          ],
+          [
+            317.0,
+            436.0
+          ],
+          [
+            44.0,
+            436.0
+          ]
+        ]
+      },
+      {
+        "title": "Academic Information",
+        "bounding_box": [
+          [
+            45.0,
+            622.0
+          ],
+          [
+            246.0,
+            622.0
+          ],
+          [
+            246.0,
+            643.0
+          ],
+          [
+            45.0,
+            643.0
+          ]
+        ]
+      }
+    ],
+    "ocr_accuracy": 0.89,
+    "field_detection": 0.95,
+    "field_mapping": 0.65,
+    "classification_stats": {
+      "TOTAL_OCR_BLOCKS": 103,
+      "FIELD_LABEL": 42,
+      "SECTION_HEADER": 10,
+      "INSTRUCTION": 2,
+      "DECLARATION": 1,
+      "CHECKLIST_ITEM": 9,
+      "OFFICE_USE_ONLY": 19,
+      "SAMPLE_VALUE": 0,
+      "SIGNATURE_AREA": 1,
+      "UNKNOWN": 19
+    }
+  }
+}

@@ -1,0 +1,2153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FormSaathi — Samjho Har Field Ko</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,700;0,900;1,300;1,700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════════ */
+:root {
+  --paper:    #F7F3ED;
+  --paper2:   #EFE9E0;
+  --paper3:   #E5DDD1;
+  --teal:     #0D5C63;
+  --teal2:    #0A4A50;
+  --teal-l:   #E3F2F3;
+  --teal-m:   #1A7A83;
+  --saffron:  #F4A024;
+  --saff-l:   #FEF5E7;
+  --saff-d:   #D4841A;
+  --ink:      #1A1208;
+  --ink2:     #4A3F30;
+  --ink3:     #8A7D6A;
+  --ink4:     #C4B8A8;
+  --red:      #C0392B;
+  --red-l:    #FDECEA;
+  --green:    #1E7B3A;
+  --green-l:  #EBF7EE;
+  --rule:     rgba(26,18,8,0.1);
+  --shadow-sm: 0 1px 3px rgba(26,18,8,0.08);
+  --shadow:    0 3px 14px rgba(26,18,8,0.10);
+  --shadow-lg: 0 8px 32px rgba(26,18,8,0.14);
+  --r: 12px;
+  --r-sm: 7px;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+/* ═══════════════════════════════════════════
+   TOP NAV
+═══════════════════════════════════════════ */
+.topnav {
+  background: var(--teal);
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  height: 58px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  box-shadow: 0 2px 12px rgba(13,92,99,0.3);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.nav-logo-word {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.nav-logo-word span { color: var(--saffron); }
+
+.nav-logo-dot {
+  width: 6px; height: 6px;
+  background: var(--saffron);
+  border-radius: 50%;
+  margin-left: 2px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.nav-tabs {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+}
+
+.nav-tab {
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.55);
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.nav-tab:hover { color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.07); }
+.nav-tab.active { color: #fff; background: rgba(255,255,255,0.13); }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang-row {
+  display: flex;
+  gap: 4px;
+}
+
+.lang-pill {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.13s;
+}
+
+.lang-pill.active { background: var(--saffron); border-color: var(--saffron); color: #fff; }
+.lang-pill:hover:not(.active) { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); }
+
+.user-chip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 4px 12px 4px 4px;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+.user-av {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--saffron);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 800; color: var(--teal2);
+}
+
+.user-name-small { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.85); }
+
+/* ═══════════════════════════════════════════
+   PAGE SYSTEM
+═══════════════════════════════════════════ */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ═══════════════════════════════════════════
+   PAGE 1: HOME / UPLOAD
+═══════════════════════════════════════════ */
+.home-hero {
+  background: var(--teal2);
+  padding: 56px 40px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ruled lines watermark */
+.home-hero::before {
+  content:'';
+  position: absolute;
+  inset: 0;
+  background-repeating-linear-gradient: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 31px,
+    rgba(255,255,255,0.04) 31px,
+    rgba(255,255,255,0.04) 32px
+  );
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 31px,
+    rgba(255,255,255,0.04) 31px,
+    rgba(255,255,255,0.04) 32px
+  );
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(244,160,36,0.18);
+  border: 1px solid rgba(244,160,36,0.35);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--saffron);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  position: relative;
+}
+
+.hero-h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 52px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.hero-h1 em {
+  font-style: italic;
+  color: var(--saffron);
+}
+
+.hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.55);
+  max-width: 520px;
+  margin: 0 auto 36px;
+  line-height: 1.6;
+  font-weight: 400;
+  position: relative;
+}
+
+/* Upload card */
+.upload-card {
+  background: var(--paper);
+  border-radius: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.upload-card-inner {
+  padding: 36px 32px;
+  border: 2.5px dashed var(--paper3);
+  margin: 16px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.upload-card-inner:hover {
+  border-color: var(--teal-m);
+  background: var(--teal-l);
+}
+
+.upload-big-icon {
+  font-size: 52px;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.upload-h {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 7px;
+  letter-spacing: -0.4px;
+}
+
+.upload-p {
+  font-size: 14px;
+  color: var(--ink3);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--teal);
+  color: #fff;
+  padding: 11px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.15s;
+  margin-bottom: 14px;
+}
+
+.upload-btn:hover { background: var(--teal2); }
+
+.upload-formats-row {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.fmt {
+  padding: 3px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--paper2);
+  color: var(--ink3);
+  letter-spacing: 0.3px;
+}
+
+.upload-card-footer {
+  display: flex;
+  border-top: 1px solid var(--rule);
+  background: var(--paper2);
+}
+
+.upload-alt-btn {
+  flex: 1;
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink2);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+  border-right: 1px solid var(--rule);
+  transition: background 0.13s;
+}
+
+.upload-alt-btn:last-child { border-right: none; }
+.upload-alt-btn:hover { background: var(--paper3); }
+
+/* Form type quick picks */
+.quick-section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 20px 0;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink3);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.form-type-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.form-type-card {
+  background: #fff;
+  border: 1px solid var(--paper3);
+  border-radius: var(--r);
+  padding: 18px 16px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-type-card:hover {
+  border-color: var(--teal-m);
+  box-shadow: 0 0 0 3px var(--teal-l), var(--shadow);
+  transform: translateY(-2px);
+}
+
+.ft-icon { font-size: 28px; margin-bottom: 8px; }
+.ft-name { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+.ft-count { font-size: 11px; color: var(--ink3); }
+
+/* Stats strip */
+.stats-strip {
+  background: #fff;
+  border-top: 1px solid var(--paper3);
+  border-bottom: 1px solid var(--paper3);
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.stat-item {
+  flex: 1;
+  max-width: 200px;
+  padding: 22px 20px;
+  text-align: center;
+  border-right: 1px solid var(--paper3);
+}
+.stat-item:last-child { border-right: none; }
+
+.stat-num {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--teal);
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-desc { font-size: 12px; color: var(--ink3); font-weight: 500; }
+
+/* recent forms */
+.recent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.recent-card {
+  background: #fff;
+  border: 1px solid var(--paper3);
+  border-radius: var(--r);
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.15s;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.recent-card:hover { border-color: var(--teal-m); transform: translateY(-1px); box-shadow: var(--shadow); }
+
+.recent-icon {
+  width: 38px; height: 38px;
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.recent-name { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+.recent-meta { font-size: 11.5px; color: var(--ink3); line-height: 1.4; }
+
+.recent-status {
+  margin-top: 8px;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.status-done { background: var(--green-l); color: var(--green); }
+.status-partial { background: var(--saff-l); color: var(--saff-d); }
+
+/* ═══════════════════════════════════════════
+   PAGE 2: ANALYZE (the main working page)
+═══════════════════════════════════════════ */
+.analyze-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr 300px;
+  gap: 0;
+  height: calc(100vh - 58px);
+  overflow: hidden;
+}
+
+/* LEFT PANEL — form field list */
+.panel-left {
+  background: #fff;
+  border-right: 1px solid var(--paper3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.panel-head {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--rule);
+  flex-shrink: 0;
+}
+
+.panel-head-title {
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 3px;
+  letter-spacing: -0.3px;
+}
+
+.panel-head-sub { font-size: 11.5px; color: var(--ink3); }
+
+.form-meta-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.meta-tag {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+
+.meta-teal   { background: var(--teal-l); color: var(--teal); }
+.meta-saff   { background: var(--saff-l); color: var(--saff-d); }
+.meta-green  { background: var(--green-l); color: var(--green); }
+.meta-red    { background: var(--red-l); color: var(--red); }
+
+/* progress bar */
+.prog-wrap {
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--rule);
+  flex-shrink: 0;
+}
+
+.prog-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--ink3);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.prog-pct { font-weight: 800; color: var(--teal); font-family: 'DM Mono', monospace; }
+
+.prog-track {
+  height: 6px;
+  background: var(--paper2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.prog-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal), var(--teal-m));
+  border-radius: 3px;
+  width: 28%;
+  transition: width 0.6s ease;
+}
+
+/* field list */
+.field-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 10px;
+}
+
+.field-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.13s;
+  margin-bottom: 2px;
+  border: 1.5px solid transparent;
+}
+
+.field-item:hover { background: var(--paper); }
+
+.field-item.fi-active {
+  background: var(--teal-l);
+  border-color: var(--teal-m);
+}
+
+.field-item.fi-done { opacity: 0.7; }
+.field-item.fi-error { border-color: rgba(192,57,43,0.3); background: var(--red-l); }
+
+.fi-status {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--paper3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  background: var(--paper2);
+  color: var(--ink3);
+  font-weight: 800;
+}
+
+.fi-status.done { background: var(--green); border-color: var(--green); color: #fff; }
+.fi-status.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+.fi-status.error { background: var(--red); border-color: var(--red); color: #fff; font-size: 10px; }
+
+.fi-body { flex: 1; min-width: 0; }
+.fi-name { font-size: 12.5px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.fi-name.active { color: var(--teal); }
+.fi-sub { font-size: 11px; color: var(--ink3); line-height: 1.4; }
+
+.fi-badges { display: flex; gap: 4px; margin-top: 4px; flex-wrap: wrap; }
+
+.fi-badge {
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 20px;
+}
+
+.badge-req  { background: var(--red-l); color: var(--red); }
+.badge-opt  { background: var(--paper2); color: var(--ink3); }
+.badge-sign { background: var(--saff-l); color: var(--saff-d); }
+.badge-doc  { background: var(--teal-l); color: var(--teal); }
+
+/* MIDDLE PANEL — form view */
+.panel-mid {
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.mid-topbar {
+  padding: 13px 20px;
+  background: var(--paper2);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.mid-topbar-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink2);
+  flex: 1;
+}
+
+.mid-btn {
+  padding: 6px 13px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1.5px solid var(--paper3);
+  background: #fff;
+  color: var(--ink2);
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.13s;
+}
+.mid-btn:hover { background: var(--paper3); }
+.mid-btn.primary { background: var(--teal); color: #fff; border-color: var(--teal); }
+.mid-btn.primary:hover { background: var(--teal2); }
+
+.form-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 28px;
+}
+
+/* The paper form simulation */
+.paper-form {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: var(--shadow), 0 0 0 1px var(--paper3);
+  overflow: hidden;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.paper-form-header {
+  background: var(--teal);
+  padding: 20px 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.paper-form-seal {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.paper-form-title {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.paper-form-sub { font-size: 12px; color: rgba(255,255,255,0.6); }
+
+.paper-form-body { padding: 20px 28px; }
+
+/* Each field in the paper form */
+.pf-field {
+  margin-bottom: 18px;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 10px 12px;
+  transition: all 0.15s;
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.pf-field:hover {
+  background: var(--teal-l);
+  border-color: rgba(13,92,99,0.2);
+}
+
+.pf-field.pf-selected {
+  background: var(--teal-l);
+  border-color: var(--teal-m);
+}
+
+.pf-field.pf-error {
+  background: var(--red-l);
+  border-color: rgba(192,57,43,0.3);
+}
+
+.pf-field.pf-done {
+  background: var(--green-l);
+  border-color: rgba(30,123,58,0.2);
+}
+
+.pf-label-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 5px;
+}
+
+.pf-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex: 1;
+}
+
+.pf-req-star { color: var(--red); font-size: 13px; }
+
+.pf-flag {
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 1px 8px;
+  border-radius: 20px;
+}
+
+.pf-flag.req  { background: var(--red-l); color: var(--red); }
+.pf-flag.opt  { background: var(--paper2); color: var(--ink3); }
+.pf-flag.sign { background: var(--saff-l); color: var(--saff-d); }
+.pf-flag.doc  { background: var(--teal-l); color: var(--teal); }
+
+/* ruled line input */
+.pf-ruled {
+  border: none;
+  border-bottom: 1.5px solid var(--rule);
+  width: 100%;
+  padding: 5px 0;
+  font-size: 13.5px;
+  font-family: 'DM Mono', monospace;
+  background: transparent;
+  color: var(--ink);
+  font-weight: 500;
+  outline: none;
+}
+
+.pf-ruled:focus { border-bottom-color: var(--teal); }
+.pf-ruled::placeholder { color: var(--ink4); font-family: 'DM Sans', sans-serif; font-size: 12.5px; }
+
+.pf-ruled.filled { color: var(--green); }
+.pf-ruled.error-val { color: var(--red); }
+
+.pf-ai-tip {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--teal);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px;
+  color: #fff;
+  font-weight: 800;
+  opacity: 0;
+  transition: opacity 0.15s;
+  cursor: pointer;
+}
+
+.pf-field:hover .pf-ai-tip { opacity: 1; }
+.pf-field.pf-selected .pf-ai-tip { opacity: 1; background: var(--saffron); }
+
+.pf-error-msg {
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--red);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pf-divider {
+  height: 1px;
+  background: var(--rule);
+  margin: 6px -28px;
+}
+
+.pf-section-head {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--ink3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 12px 0 4px;
+}
+
+/* RIGHT PANEL — explanation */
+.panel-right {
+  background: var(--paper);
+  border-left: 1px solid var(--paper3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.exp-head {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--rule);
+  flex-shrink: 0;
+}
+
+.exp-head-label {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--ink3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.exp-field-title {
+  font-family: 'Fraunces', serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.4px;
+  margin-bottom: 3px;
+  line-height: 1.2;
+}
+
+.exp-field-vernacular {
+  font-size: 14px;
+  color: var(--teal-m);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.exp-badge-row { display: flex; gap: 5px; flex-wrap: wrap; }
+
+.exp-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* explanation block */
+.exp-block {
+  background: #fff;
+  border: 1px solid var(--paper3);
+  border-radius: var(--r);
+  overflow: hidden;
+}
+
+.exp-block-label {
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 8px 13px 6px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.exp-block-body { padding: 11px 13px; font-size: 13px; color: var(--ink2); line-height: 1.65; }
+
+.exp-block.what { border-left: 3px solid var(--teal); }
+.exp-block.what .exp-block-label { color: var(--teal); }
+
+.exp-block.example { border-left: 3px solid var(--green); }
+.exp-block.example .exp-block-label { color: var(--green); }
+.exp-block.example .exp-block-body {
+  font-family: 'DM Mono', monospace;
+  font-size: 12.5px;
+  color: var(--green);
+  font-weight: 500;
+}
+
+.exp-block.tip { border-left: 3px solid var(--saffron); }
+.exp-block.tip .exp-block-label { color: var(--saff-d); }
+
+.exp-block.docs { border-left: 3px solid var(--teal-m); }
+.exp-block.docs .exp-block-label { color: var(--teal); }
+
+.doc-need-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--ink2);
+  padding: 5px 0;
+  border-bottom: 1px solid var(--rule);
+  font-weight: 500;
+}
+.doc-need-row:last-child { border-bottom: none; }
+
+.exp-block.warn { border-left: 3px solid var(--red); }
+.exp-block.warn .exp-block-label { color: var(--red); }
+.exp-block.warn .exp-block-body { color: var(--red); }
+
+/* voice button */
+.voice-exp-btn {
+  background: var(--teal);
+  color: #fff;
+  border: none;
+  border-radius: var(--r-sm);
+  padding: 11px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.15s;
+  width: 100%;
+}
+
+.voice-exp-btn:hover { background: var(--teal2); }
+
+.exp-nav-row {
+  display: flex;
+  gap: 8px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--rule);
+  flex-shrink: 0;
+}
+
+.exp-nav-btn {
+  flex: 1;
+  padding: 8px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1.5px solid var(--paper3);
+  background: #fff;
+  color: var(--ink2);
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.13s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.exp-nav-btn:hover { background: var(--paper2); }
+.exp-nav-btn.next-btn { background: var(--teal); color: #fff; border-color: var(--teal); }
+.exp-nav-btn.next-btn:hover { background: var(--teal2); }
+
+/* ═══════════════════════════════════════════
+   PAGE 3: RESULTS
+═══════════════════════════════════════════ */
+.results-layout {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+}
+
+.results-hero {
+  background: var(--teal);
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-lg);
+}
+
+.results-score-ring {
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 3px solid rgba(255,255,255,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ring-num {
+  font-family: 'Fraunces', serif;
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--saffron);
+  line-height: 1;
+}
+
+.ring-label { font-size: 9px; color: rgba(255,255,255,0.5); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.results-hero-info { flex: 1; }
+
+.results-hero-title {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
+  letter-spacing: -0.4px;
+}
+
+.results-hero-sub { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.5; margin-bottom: 12px; }
+
+.hero-meta-pills { display: flex; gap: 7px; flex-wrap: wrap; }
+
+.hero-pill {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.8);
+}
+
+.hero-pill.hl { background: rgba(244,160,36,0.25); color: var(--saffron); }
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.r-card {
+  background: #fff;
+  border: 1px solid var(--paper3);
+  border-radius: var(--r);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.r-card-head {
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.r-card-title {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--ink);
+  flex: 1;
+  letter-spacing: -0.2px;
+}
+
+.count-badge {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 9px;
+  border-radius: 20px;
+}
+
+.r-card-body { padding: 14px 18px; }
+
+/* missing list */
+.missing-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 13px;
+  color: var(--ink2);
+}
+
+.missing-row:last-child { border-bottom: none; }
+.missing-row .miss-icon { font-size: 15px; flex-shrink: 0; }
+.missing-row strong { color: var(--ink); font-weight: 700; }
+
+/* doc checklist */
+.doc-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 7px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: all 0.13s;
+  border: 1px solid transparent;
+}
+
+.doc-row:hover { background: var(--paper); border-color: var(--paper3); }
+
+.doc-chk {
+  width: 20px; height: 20px;
+  border-radius: 5px;
+  border: 2px solid var(--paper3);
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px;
+  transition: all 0.13s;
+  background: #fff;
+}
+
+.doc-chk.checked { background: var(--green); border-color: var(--green); color: #fff; }
+
+.doc-name { font-size: 12.5px; font-weight: 600; color: var(--ink2); flex: 1; }
+.doc-hint { font-size: 11px; color: var(--ink3); }
+
+/* validation rows */
+.val-row {
+  display: flex;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  border: 1px solid transparent;
+}
+
+.val-row.v-err { background: var(--red-l); border-color: rgba(192,57,43,0.15); }
+.val-row.v-warn { background: var(--saff-l); border-color: rgba(244,160,36,0.2); }
+.val-row.v-ok  { background: var(--green-l); border-color: rgba(30,123,58,0.15); }
+
+.val-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+.val-field { font-size: 12px; font-weight: 800; margin-bottom: 2px; }
+.val-msg { font-size: 11.5px; line-height: 1.4; }
+
+.v-err .val-field { color: var(--red); }
+.v-err .val-msg   { color: rgba(192,57,43,0.8); }
+.v-warn .val-field { color: var(--saff-d); }
+.v-warn .val-msg   { color: rgba(212,132,26,0.8); }
+.v-ok .val-field   { color: var(--green); }
+.v-ok .val-msg     { color: rgba(30,123,58,0.7); }
+
+/* difficulty meter */
+.diff-meter {
+  background: #fff;
+  border: 1px solid var(--paper3);
+  border-radius: var(--r);
+  padding: 20px 22px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.diff-score-big {
+  font-family: 'Fraunces', serif;
+  font-size: 54px;
+  font-weight: 900;
+  color: var(--saffron);
+  letter-spacing: -2px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.diff-score-sub { font-size: 12px; color: var(--ink3); font-weight: 600; margin-top: 2px; }
+
+.diff-details { flex: 1; }
+
+.diff-label-big {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.diff-track {
+  height: 10px;
+  background: var(--paper2);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.diff-track-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2ECC71, #F4A024, #E74C3C);
+  border-radius: 5px;
+  width: 72%;
+}
+
+.diff-range { display: flex; justify-content: space-between; font-size: 10px; color: var(--ink4); font-weight: 600; }
+
+/* action strip */
+.action-strip {
+  display: flex;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid var(--paper3);
+  border-radius: var(--r);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.action-btn {
+  flex: 1;
+  padding: 11px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1.5px solid var(--paper3);
+  background: var(--paper);
+  color: var(--ink2);
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.13s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.action-btn:hover { background: var(--paper2); }
+.action-btn.primary { background: var(--teal); color: #fff; border-color: var(--teal); }
+.action-btn.primary:hover { background: var(--teal2); }
+
+/* scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--paper3); border-radius: 2px; }
+
+/* ═══════════════════════════════════════════
+   UTILITIES
+═══════════════════════════════════════════ */
+@keyframes fadeSlideUp {
+  from { opacity:0; transform:translateY(12px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+.anim { animation: fadeSlideUp 0.4s ease both; }
+.anim-d1 { animation-delay: 0.05s; }
+.anim-d2 { animation-delay: 0.10s; }
+.anim-d3 { animation-delay: 0.15s; }
+.anim-d4 { animation-delay: 0.20s; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ TOP NAV -->
+<nav class="topnav">
+  <div class="nav-logo" onclick="showPage('home')">
+    <div class="nav-logo-word">Form<span>Saathi</span></div>
+    <div class="nav-logo-dot"></div>
+  </div>
+
+  <div class="nav-tabs">
+    <button class="nav-tab active" id="tab-home" onclick="showPage('home')">🏠 Home</button>
+    <button class="nav-tab" id="tab-analyze" onclick="showPage('analyze')">🔍 Analyze Form</button>
+    <button class="nav-tab" id="tab-results" onclick="showPage('results')">📊 Results</button>
+    <button class="nav-tab" id="tab-library">📚 Form Library</button>
+  </div>
+
+  <div class="nav-right">
+    <div class="lang-row">
+      <button class="lang-pill active">EN</button>
+      <button class="lang-pill">हि</button>
+      <button class="lang-pill">म</button>
+      <button class="lang-pill">తె</button>
+      <button class="lang-pill">ਪੰ</button>
+    </div>
+    <div class="user-chip">
+      <div class="user-av">RS</div>
+      <span class="user-name-small">Rahul S.</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+  PAGE 1: HOME
+═══════════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <!-- Hero + Upload -->
+  <div class="home-hero">
+    <div class="hero-eyebrow">🇮🇳 Made for India &nbsp;·&nbsp; 6 Languages &nbsp;·&nbsp; 200+ Form Types</div>
+    <h1 class="hero-h1">Every form field,<br><em>explained simply.</em></h1>
+    <p class="hero-sub">Upload any government, bank, scholarship or job form. Our AI reads it, explains every field in plain language — in your language.</p>
+
+    <div class="upload-card">
+      <div class="upload-card-inner" onclick="showPage('analyze')">
+        <span class="upload-big-icon">📄</span>
+        <div class="upload-h">Drop your form here</div>
+        <p class="upload-p">A photo, scan, or PDF of any form — we'll identify and explain every single field.</p>
+        <button class="upload-btn" onclick="showPage('analyze')">
+          📁 &nbsp;Upload Form
+        </button>
+        <div class="upload-formats-row">
+          <span class="fmt">PDF</span>
+          <span class="fmt">JPG / PNG</span>
+          <span class="fmt">Camera Scan</span>
+        </div>
+      </div>
+      <div class="upload-card-footer">
+        <button class="upload-alt-btn">📷 &nbsp;Use Camera</button>
+        <button class="upload-alt-btn">☁ &nbsp;Google Drive</button>
+        <button class="upload-alt-btn">🎙 &nbsp;Voice Mode</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats strip -->
+  <div class="stats-strip">
+    <div class="stat-item">
+      <div class="stat-num">48,200+</div>
+      <div class="stat-desc">Forms analyzed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">1.2M</div>
+      <div class="stat-desc">Fields explained</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">6</div>
+      <div class="stat-desc">Indian languages</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">200+</div>
+      <div class="stat-desc">Form types in library</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4.8★</div>
+      <div class="stat-desc">User rating</div>
+    </div>
+  </div>
+
+  <!-- Form Type Quick Picks -->
+  <div class="quick-section">
+    <div class="section-label">Browse by form type</div>
+    <div class="form-type-grid">
+      <div class="form-type-card" onclick="showPage('analyze')">
+        <div class="ft-icon">🏛</div>
+        <div class="ft-name">Government</div>
+        <div class="ft-count">Ration Card, Aadhaar, PAN</div>
+      </div>
+      <div class="form-type-card" onclick="showPage('analyze')">
+        <div class="ft-icon">🏦</div>
+        <div class="ft-name">Bank & Finance</div>
+        <div class="ft-count">SBI, Account Opening, KYC</div>
+      </div>
+      <div class="form-type-card" onclick="showPage('analyze')">
+        <div class="ft-icon">🎓</div>
+        <div class="ft-name">Scholarship</div>
+        <div class="ft-count">EBC, NSP, State Schemes</div>
+      </div>
+      <div class="form-type-card" onclick="showPage('analyze')">
+        <div class="ft-icon">🏥</div>
+        <div class="ft-name">Medical</div>
+        <div class="ft-count">Hospital Admission, Insurance</div>
+      </div>
+      <div class="form-type-card" onclick="showPage('analyze')">
+        <div class="ft-icon">🚆</div>
+        <div class="ft-name">Railway & Travel</div>
+        <div class="ft-count">Concession, Passport, Visa</div>
+      </div>
+      <div class="form-type-card" onclick="showPage('analyze')">
+        <div class="ft-icon">💼</div>
+        <div class="ft-name">Employment</div>
+        <div class="ft-count">EPFO, Job Application, ESI</div>
+      </div>
+      <div class="form-type-card" onclick="showPage('analyze')">
+        <div class="ft-icon">🏠</div>
+        <div class="ft-name">Property & Legal</div>
+        <div class="ft-count">Rent Agreement, Court Forms</div>
+      </div>
+      <div class="form-type-card" onclick="showPage('analyze')">
+        <div class="ft-icon">📮</div>
+        <div class="ft-name">Post Office</div>
+        <div class="ft-count">PPF, NSC, Money Order</div>
+      </div>
+    </div>
+
+    <div class="section-label">Recently analyzed</div>
+    <div class="recent-grid">
+      <div class="recent-card" onclick="showPage('results')">
+        <div class="recent-icon" style="background:var(--teal-l)">🎓</div>
+        <div>
+          <div class="recent-name">Maharashtra Scholarship Form</div>
+          <div class="recent-meta">Education Dept. · 14 fields · Analyzed today</div>
+          <span class="recent-status status-partial">In Progress</span>
+        </div>
+      </div>
+      <div class="recent-card">
+        <div class="recent-icon" style="background:#EFF0FB">🏦</div>
+        <div>
+          <div class="recent-name">SBI Account Opening Form</div>
+          <div class="recent-meta">Bank · 8 fields · 2 days ago</div>
+          <span class="recent-status status-done">Completed</span>
+        </div>
+      </div>
+      <div class="recent-card">
+        <div class="recent-icon" style="background:var(--saff-l)">🏛</div>
+        <div>
+          <div class="recent-name">Ration Card Application</div>
+          <div class="recent-meta">Civil Supplies · 12 fields · 4 days ago</div>
+          <span class="recent-status status-done">Completed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+  PAGE 2: ANALYZE
+═══════════════════════════════════════ -->
+<div class="page" id="page-analyze">
+  <div class="analyze-layout">
+
+    <!-- LEFT: Field List -->
+    <div class="panel-left">
+      <div class="panel-head">
+        <div class="panel-head-title">Maharashtra Scholarship Form</div>
+        <div class="panel-head-sub">Education Dept. · 2024–25 · OCR Complete</div>
+        <div class="form-meta-row">
+          <span class="meta-tag meta-teal">Scholarship</span>
+          <span class="meta-tag meta-saff">14 Fields</span>
+          <span class="meta-tag meta-red">3 Errors</span>
+          <span class="meta-tag meta-green">4 Done</span>
+        </div>
+      </div>
+
+      <div class="prog-wrap">
+        <div class="prog-row">
+          <span>Form completion</span>
+          <span class="prog-pct">28%</span>
+        </div>
+        <div class="prog-track">
+          <div class="prog-fill"></div>
+        </div>
+      </div>
+
+      <div class="field-scroll">
+
+        <div class="field-item fi-done" onclick="selectField('name')">
+          <div class="fi-status done">✓</div>
+          <div class="fi-body">
+            <div class="fi-name">Full Name</div>
+            <div class="fi-sub">Rahul Ramesh Sharma</div>
+            <div class="fi-badges"><span class="fi-badge badge-req">Required</span></div>
+          </div>
+        </div>
+
+        <div class="field-item fi-done" onclick="selectField('dob')">
+          <div class="fi-status done">✓</div>
+          <div class="fi-body">
+            <div class="fi-name">Date of Birth</div>
+            <div class="fi-sub">15 / 08 / 2002</div>
+            <div class="fi-badges"><span class="fi-badge badge-req">Required</span></div>
+          </div>
+        </div>
+
+        <div class="field-item fi-done" onclick="selectField('perm')">
+          <div class="fi-status done">✓</div>
+          <div class="fi-body">
+            <div class="fi-name">Permanent Address</div>
+            <div class="fi-sub">Plot 14, Manish Nagar, Nagpur</div>
+            <div class="fi-badges"><span class="fi-badge badge-req">Required</span></div>
+          </div>
+        </div>
+
+        <div class="field-item fi-done" onclick="selectField('mob')">
+          <div class="fi-status done">✓</div>
+          <div class="fi-body">
+            <div class="fi-name">Mobile Number</div>
+            <div class="fi-sub">9876543210</div>
+            <div class="fi-badges"><span class="fi-badge badge-req">Required</span></div>
+          </div>
+        </div>
+
+        <div class="field-item fi-active" onclick="selectField('corr')">
+          <div class="fi-status active">→</div>
+          <div class="fi-body">
+            <div class="fi-name active">Correspondence Address</div>
+            <div class="fi-sub">Explaining now…</div>
+            <div class="fi-badges"><span class="fi-badge badge-opt">Optional</span></div>
+          </div>
+        </div>
+
+        <div class="field-item" onclick="selectField('income')">
+          <div class="fi-status">6</div>
+          <div class="fi-body">
+            <div class="fi-name">Annual Family Income</div>
+            <div class="fi-sub">Not filled yet</div>
+            <div class="fi-badges"><span class="fi-badge badge-req">Required</span></div>
+          </div>
+        </div>
+
+        <div class="field-item" onclick="selectField('caste')">
+          <div class="fi-status">7</div>
+          <div class="fi-body">
+            <div class="fi-name">Caste Category</div>
+            <div class="fi-sub">Not filled yet</div>
+            <div class="fi-badges">
+              <span class="fi-badge badge-req">Required</span>
+              <span class="fi-badge badge-doc">Certificate needed</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-item fi-error" onclick="selectField('ifsc')">
+          <div class="fi-status error">!</div>
+          <div class="fi-body">
+            <div class="fi-name">IFSC Code</div>
+            <div class="fi-sub">SBIN000 — Invalid format</div>
+            <div class="fi-badges"><span class="fi-badge badge-req">Required</span></div>
+          </div>
+        </div>
+
+        <div class="field-item" onclick="selectField('acc')">
+          <div class="fi-status">9</div>
+          <div class="fi-body">
+            <div class="fi-name">Bank Account Number</div>
+            <div class="fi-sub">Not filled yet</div>
+            <div class="fi-badges"><span class="fi-badge badge-req">Required</span></div>
+          </div>
+        </div>
+
+        <div class="field-item" onclick="selectField('photo')">
+          <div class="fi-status">10</div>
+          <div class="fi-body">
+            <div class="fi-name">Passport Size Photo</div>
+            <div class="fi-sub">Not uploaded</div>
+            <div class="fi-badges"><span class="fi-badge badge-doc">Attach</span></div>
+          </div>
+        </div>
+
+        <div class="field-item" onclick="selectField('nominee')">
+          <div class="fi-status">11</div>
+          <div class="fi-body">
+            <div class="fi-name">Nominee Details</div>
+            <div class="fi-sub">Not filled</div>
+            <div class="fi-badges"><span class="fi-badge badge-opt">Optional</span></div>
+          </div>
+        </div>
+
+        <div class="field-item" onclick="selectField('occ')">
+          <div class="fi-status">12</div>
+          <div class="fi-body">
+            <div class="fi-name">Occupation Code</div>
+            <div class="fi-sub">Not filled</div>
+            <div class="fi-badges"><span class="fi-badge badge-req">Required</span></div>
+          </div>
+        </div>
+
+        <div class="field-item" onclick="selectField('decl')">
+          <div class="fi-status">13</div>
+          <div class="fi-body">
+            <div class="fi-name">Declaration</div>
+            <div class="fi-sub">Read and sign</div>
+            <div class="fi-badges"><span class="fi-badge badge-sign">Signature</span></div>
+          </div>
+        </div>
+
+        <div class="field-item fi-error" onclick="selectField('self')">
+          <div class="fi-status error">!</div>
+          <div class="fi-body">
+            <div class="fi-name">Self Attested Copy</div>
+            <div class="fi-sub">Document missing</div>
+            <div class="fi-badges"><span class="fi-badge badge-doc">Attach</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MIDDLE: Paper Form View -->
+    <div class="panel-mid">
+      <div class="mid-topbar">
+        <span class="mid-topbar-label">📄 Form Preview — click any field to see explanation</span>
+        <button class="mid-btn" onclick="showPage('home')">← Back</button>
+        <button class="mid-btn">🔍 Zoom</button>
+        <button class="mid-btn primary" onclick="showPage('results')">View Results →</button>
+      </div>
+
+      <div class="form-scroll">
+        <div class="paper-form">
+
+          <div class="paper-form-header">
+            <div class="paper-form-seal">🏛</div>
+            <div>
+              <div class="paper-form-title">Maharashtra State Scholarship Application Form</div>
+              <div class="paper-form-sub">Department of Social Justice & Special Assistance · Academic Year 2024–25</div>
+            </div>
+          </div>
+
+          <div class="paper-form-body">
+
+            <div class="pf-section-head">Personal Details</div>
+
+            <div class="pf-field pf-done" onclick="selectField('name')">
+              <div class="pf-label-row">
+                <div class="pf-label">Full Name <span class="pf-req-star">*</span></div>
+                <span class="pf-flag req">Required</span>
+              </div>
+              <input class="pf-ruled filled" value="Rahul Ramesh Sharma" readonly>
+              <div class="pf-ai-tip">✓</div>
+            </div>
+
+            <div class="pf-field pf-done" onclick="selectField('dob')">
+              <div class="pf-label-row">
+                <div class="pf-label">Date of Birth <span class="pf-req-star">*</span></div>
+                <span class="pf-flag req">Required</span>
+              </div>
+              <input class="pf-ruled filled" value="15 / 08 / 2002" readonly>
+              <div class="pf-ai-tip">✓</div>
+            </div>
+
+            <div class="pf-field pf-done" onclick="selectField('mob')">
+              <div class="pf-label-row">
+                <div class="pf-label">Mobile Number <span class="pf-req-star">*</span></div>
+                <span class="pf-flag req">Required</span>
+              </div>
+              <input class="pf-ruled filled" value="9876543210" readonly>
+              <div class="pf-ai-tip">✓</div>
+            </div>
+
+            <div class="pf-divider"></div>
+            <div class="pf-section-head">Address Details</div>
+
+            <div class="pf-field pf-done" onclick="selectField('perm')">
+              <div class="pf-label-row">
+                <div class="pf-label">Permanent Address <span class="pf-req-star">*</span></div>
+                <span class="pf-flag req">Required</span>
+              </div>
+              <input class="pf-ruled filled" value="Plot 14, Manish Nagar, Nagpur – 440015" readonly>
+              <div class="pf-ai-tip">✓</div>
+            </div>
+
+            <div class="pf-field pf-selected" onclick="selectField('corr')">
+              <div class="pf-label-row">
+                <div class="pf-label">Correspondence Address</div>
+                <span class="pf-flag opt">Optional</span>
+              </div>
+              <input class="pf-ruled" placeholder="Where should we send letters to you?">
+              <div class="pf-ai-tip">?</div>
+            </div>
+
+            <div class="pf-divider"></div>
+            <div class="pf-section-head">Academic & Financial Information</div>
+
+            <div class="pf-field" onclick="selectField('income')">
+              <div class="pf-label-row">
+                <div class="pf-label">Annual Family Income <span class="pf-req-star">*</span></div>
+                <span class="pf-flag req">Required</span>
+              </div>
+              <input class="pf-ruled" placeholder="Total yearly income of all family members in ₹">
+              <div class="pf-ai-tip">?</div>
+            </div>
+
+            <div class="pf-field" onclick="selectField('caste')">
+              <div class="pf-label-row">
+                <div class="pf-label">Caste Category <span class="pf-req-star">*</span></div>
+                <span class="pf-flag doc">📎 Certificate needed</span>
+              </div>
+              <input class="pf-ruled" placeholder="GEN / OBC / SC / ST / NT / SBC">
+              <div class="pf-ai-tip">?</div>
+            </div>
+
+            <div class="pf-divider"></div>
+            <div class="pf-section-head">Bank Details</div>
+
+            <div class="pf-field pf-error" onclick="selectField('ifsc')">
+              <div class="pf-label-row">
+                <div class="pf-label">IFSC Code <span class="pf-req-star">*</span></div>
+                <span class="pf-flag req">Required</span>
+              </div>
+              <input class="pf-ruled error-val" value="SBIN000" readonly>
+              <div class="pf-error-msg">⚠ Invalid — IFSC must be 11 characters (e.g. SBIN0001234)</div>
+              <div class="pf-ai-tip" style="background:var(--red)">!</div>
+            </div>
+
+            <div class="pf-field" onclick="selectField('acc')">
+              <div class="pf-label-row">
+                <div class="pf-label">Bank Account Number <span class="pf-req-star">*</span></div>
+                <span class="pf-flag req">Required</span>
+              </div>
+              <input class="pf-ruled" placeholder="Your savings account number">
+              <div class="pf-ai-tip">?</div>
+            </div>
+
+            <div class="pf-divider"></div>
+            <div class="pf-section-head">Declaration</div>
+
+            <div class="pf-field" onclick="selectField('decl')">
+              <div class="pf-label-row">
+                <div class="pf-label">Declaration & Signature <span class="pf-req-star">*</span></div>
+                <span class="pf-flag sign">✍ Sign Here</span>
+              </div>
+              <input class="pf-ruled" placeholder="Sign after reading the declaration above">
+              <div class="pf-ai-tip">?</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: AI Explanation -->
+    <div class="panel-right">
+      <div class="exp-head">
+        <div class="exp-head-label">AI is explaining</div>
+        <div class="exp-field-title" id="exp-title">Correspondence Address</div>
+        <div class="exp-field-vernacular" id="exp-vernacular">पत्रव्यवहार पत्ता</div>
+        <div class="exp-badge-row">
+          <span class="meta-tag meta-teal">Optional</span>
+          <span class="meta-tag" style="background:var(--paper2);color:var(--ink3)">Field 5 of 14</span>
+        </div>
+      </div>
+
+      <div class="exp-scroll" id="exp-content">
+
+        <div class="exp-block what">
+          <div class="exp-block-label">What is this?</div>
+          <div class="exp-block-body">
+            This is the address where you currently live and want to receive letters, notices, or documents.
+            It may be different from your permanent (home) address — for example, if you live in a hostel or rented room while studying.
+          </div>
+        </div>
+
+        <div class="exp-block example">
+          <div class="exp-block-label">✅ Example</div>
+          <div class="exp-block-body">Room 4, Vijay Nagar Hostel,<br>Amravati Road, Nagpur – 440033,<br>Maharashtra</div>
+        </div>
+
+        <div class="exp-block tip">
+          <div class="exp-block-label">💡 Tip</div>
+          <div class="exp-block-body">
+            If you live at the same address as your permanent address, you can simply write <strong>"Same as above"</strong> or leave it blank — both are accepted.
+          </div>
+        </div>
+
+        <button class="voice-exp-btn">🎙 &nbsp;Explain in Marathi</button>
+
+      </div>
+
+      <div class="exp-nav-row">
+        <button class="exp-nav-btn">← Previous</button>
+        <button class="exp-nav-btn next-btn" onclick="showPage('results')">Next Field →</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+  PAGE 3: RESULTS
+═══════════════════════════════════════ -->
+<div class="page" id="page-results">
+  <div class="results-layout">
+
+    <!-- Hero score -->
+    <div class="results-hero anim">
+      <div class="results-score-ring">
+        <div class="ring-num">7.2</div>
+        <div class="ring-label">Difficulty</div>
+      </div>
+      <div class="results-hero-info">
+        <div class="results-hero-title">Maharashtra Scholarship Form — Analysis Complete</div>
+        <div class="results-hero-sub">AI has analyzed all 14 fields. 3 errors need your attention before submitting. Estimated time to complete: <strong style="color:#fff">12 more minutes.</strong></div>
+        <div class="hero-meta-pills">
+          <span class="hero-pill">14 Total Fields</span>
+          <span class="hero-pill hl">3 Errors Found</span>
+          <span class="hero-pill">5 Documents Needed</span>
+          <span class="hero-pill">~12 min left</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;flex-shrink:0">
+        <button class="mid-btn primary" onclick="showPage('analyze')" style="padding:9px 18px;font-size:13px">← Fix Errors</button>
+        <button class="mid-btn" style="background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.2);padding:9px 18px;font-size:13px">📥 Download Summary</button>
+      </div>
+    </div>
+
+    <!-- Difficulty Meter -->
+    <div class="diff-meter anim anim-d1">
+      <div>
+        <div class="diff-score-big">7.2</div>
+        <div class="diff-score-sub">out of 10</div>
+      </div>
+      <div class="diff-details">
+        <div class="diff-label-big">Moderately Difficult Form</div>
+        <div class="diff-track"><div class="diff-track-fill"></div></div>
+        <div class="diff-range"><span>Easy</span><span>Moderate</span><span>Hard</span></div>
+        <div style="font-size:12px;color:var(--ink3);margin-top:8px">This form needs income certificate, caste certificate, and bank details — slightly complex but manageable with our checklist.</div>
+      </div>
+    </div>
+
+    <!-- Two column grid -->
+    <div class="results-grid">
+
+      <!-- Missing Items -->
+      <div class="r-card anim anim-d2">
+        <div class="r-card-head">
+          <div class="r-card-title">⚠ Missing / Incomplete</div>
+          <span class="count-badge" style="background:var(--red-l);color:var(--red)">3 items</span>
+        </div>
+        <div class="r-card-body">
+          <div class="missing-row">
+            <span class="miss-icon">📸</span>
+            <div><strong>Passport Size Photo</strong> not uploaded. Recent photo, white background.</div>
+          </div>
+          <div class="missing-row">
+            <span class="miss-icon">✍</span>
+            <div><strong>Signature</strong> section is blank. Must sign in the declaration box.</div>
+          </div>
+          <div class="missing-row">
+            <span class="miss-icon">🔢</span>
+            <div><strong>IFSC Code</strong> is invalid. Entered 7 chars — needs exactly 11.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Smart Validation -->
+      <div class="r-card anim anim-d2">
+        <div class="r-card-head">
+          <div class="r-card-title">✅ Smart Validation</div>
+          <span class="count-badge" style="background:var(--green-l);color:var(--green)">2 ok · 3 issues</span>
+        </div>
+        <div class="r-card-body">
+          <div class="val-row v-err">
+            <div class="val-icon">❌</div>
+            <div>
+              <div class="val-field">IFSC Code</div>
+              <div class="val-msg">Must be exactly 11 characters. Format: SBIN0001234. Check your bank passbook first page.</div>
+            </div>
+          </div>
+          <div class="val-row v-warn">
+            <div class="val-icon">⚠</div>
+            <div>
+              <div class="val-field">Annual Family Income</div>
+              <div class="val-msg">Enter numbers only — no ₹ symbol, no commas. Write 450000, not ₹4,50,000.</div>
+            </div>
+          </div>
+          <div class="val-row v-err">
+            <div class="val-icon">❌</div>
+            <div>
+              <div class="val-field">Self Attested Copy</div>
+              <div class="val-msg">Document not attached. Upload a photo of your Aadhaar with your signature on it.</div>
+            </div>
+          </div>
+          <div class="val-row v-ok">
+            <div class="val-icon">✅</div>
+            <div>
+              <div class="val-field">Full Name</div>
+              <div class="val-msg">Matches Aadhaar card format correctly.</div>
+            </div>
+          </div>
+          <div class="val-row v-ok">
+            <div class="val-icon">✅</div>
+            <div>
+              <div class="val-field">Date of Birth</div>
+              <div class="val-msg">Valid format DD/MM/YYYY confirmed.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Document Checklist -->
+      <div class="r-card anim anim-d3">
+        <div class="r-card-head">
+          <div class="r-card-title">📎 Document Checklist</div>
+          <span class="count-badge" style="background:var(--teal-l);color:var(--teal)">2 of 5 ready</span>
+        </div>
+        <div class="r-card-body">
+          <div style="font-size:12px;color:var(--teal);background:var(--teal-l);border-radius:7px;padding:8px 11px;margin-bottom:12px;border:1px solid rgba(13,92,99,0.15)">
+            AI detected these documents are needed for this form
+          </div>
+          <div class="doc-row">
+            <div class="doc-chk checked">✓</div>
+            <div>
+              <div class="doc-name">Aadhaar Card</div>
+              <div class="doc-hint">Self-attested photocopy</div>
+            </div>
+          </div>
+          <div class="doc-row">
+            <div class="doc-chk checked">✓</div>
+            <div>
+              <div class="doc-name">Bank Passbook — first page</div>
+              <div class="doc-hint">Shows name, account no., IFSC</div>
+            </div>
+          </div>
+          <div class="doc-row">
+            <div class="doc-chk"></div>
+            <div>
+              <div class="doc-name">Income Certificate</div>
+              <div class="doc-hint">Issued by Tehsildar — must be current year</div>
+            </div>
+          </div>
+          <div class="doc-row">
+            <div class="doc-chk"></div>
+            <div>
+              <div class="doc-name">Caste Certificate</div>
+              <div class="doc-hint">If category is OBC / SC / ST / NT</div>
+            </div>
+          </div>
+          <div class="doc-row">
+            <div class="doc-chk"></div>
+            <div>
+              <div class="doc-name">Passport Size Photo</div>
+              <div class="doc-hint">Recent, white background, 35×45mm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Summary -->
+      <div class="r-card anim anim-d3">
+        <div class="r-card-head">
+          <div class="r-card-title">📋 AI Form Summary</div>
+          <span class="count-badge" style="background:var(--saff-l);color:var(--saff-d)">Auto-generated</span>
+        </div>
+        <div class="r-card-body">
+          <div style="background:var(--paper);border-radius:9px;padding:14px;border:1px solid var(--paper3);margin-bottom:12px;font-size:13px;color:var(--ink2);line-height:1.65">
+            This is the <strong>Maharashtra State Scholarship Application Form</strong> for the academic year 2024–25, issued by the Department of Social Justice. It is used by students from economically weaker sections (EWS) and reserved categories to apply for post-matric scholarships.
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;justify-content:space-between;font-size:12.5px;padding:5px 0;border-bottom:1px solid var(--rule)">
+              <span style="color:var(--ink3);font-weight:500">Form type</span>
+              <span style="font-weight:700">State Scholarship</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12.5px;padding:5px 0;border-bottom:1px solid var(--rule)">
+              <span style="color:var(--ink3);font-weight:500">Issuing authority</span>
+              <span style="font-weight:700">Dept. of Social Justice</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12.5px;padding:5px 0;border-bottom:1px solid var(--rule)">
+              <span style="color:var(--ink3);font-weight:500">Mandatory fields</span>
+              <span style="font-weight:700;color:var(--red)">9 of 14</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12.5px;padding:5px 0">
+              <span style="color:var(--ink3);font-weight:500">Est. fill time</span>
+              <span style="font-weight:700;color:var(--green)">~12 minutes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Action Strip -->
+    <div class="action-strip anim anim-d4">
+      <button class="action-btn primary" onclick="showPage('analyze')">🔧 &nbsp;Fix 3 Errors</button>
+      <button class="action-btn">📥 &nbsp;Download Summary PDF</button>
+      <button class="action-btn">🎙 &nbsp;Explain All in Hindi</button>
+      <button class="action-btn">📤 &nbsp;Share with Helper</button>
+      <button class="action-btn" onclick="showPage('home')">🏠 &nbsp;Analyze Another Form</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+  JAVASCRIPT
+═══════════════════════════════════════ -->
+<script>
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  const tab = document.getElementById('tab-' + name);
+  if (tab) tab.classList.add('active');
+}
+
+// Field explanation data
+const explanations = {
+  corr: {
+    title: 'Correspondence Address',
+    vernacular: 'पत्रव्यवहार पत्ता',
+    badge: 'Optional · Field 5 of 14',
+    what: 'This is the address where you currently live and want to receive letters, notices, or documents. It may be different from your permanent (home) address — for example, if you live in a hostel or rented room while studying.',
+    example: 'Room 4, Vijay Nagar Hostel,\nAmravati Road, Nagpur – 440033,\nMaharashtra',
+    tip: 'If you live at the same address as your permanent address, you can simply write "Same as above" or leave it blank — both are accepted.',
+    voice: 'Marathi'
+  },
+  ifsc: {
+    title: 'IFSC Code',
+    vernacular: 'आयएफएससी कोड',
+    badge: 'Required · Field 8 of 14 · ERROR',
+    what: 'IFSC stands for Indian Financial System Code. It is an 11-character code that identifies your specific bank branch. The government uses this to transfer your scholarship money directly to your account.',
+    example: 'SBIN0001234\n(SBI, Main Branch, Nagpur)\n\nSBI = Bank name\n0 = Always zero\n001234 = Branch code',
+    tip: 'Find your IFSC code on the first page of your bank passbook, or on any bank cheque. It is printed clearly on both.',
+    docs: ['Bank Passbook — first page', 'Cheque leaf from your account'],
+    voice: 'Hindi',
+    error: '⚠ You entered SBIN000 — only 7 characters. It must be exactly 11 characters.'
+  },
+  income: {
+    title: 'Annual Family Income',
+    vernacular: 'वार्षिक कौटुंबिक उत्पन्न',
+    badge: 'Required · Field 6 of 14',
+    what: 'Enter the total yearly income of ALL earning members of your family combined — father, mother, elder siblings, or anyone who earns. This is used to decide your scholarship eligibility.',
+    example: '450000\n(meaning ₹4,50,000 per year)\n\nDo NOT write: ₹4,50,000\nDo NOT write: 4,50,000\nJust write: 450000',
+    tip: 'You must get an Income Certificate from your Tehsildar office to prove this amount. The number on the certificate and this form must match exactly.',
+    docs: ['Income Certificate from Tehsildar (current year)'],
+    voice: 'Marathi'
+  },
+  caste: {
+    title: 'Caste Category',
+    vernacular: 'जात प्रवर्ग',
+    badge: 'Required · Field 7 of 14',
+    what: 'Select the category that applies to your caste as recognized by the Government of Maharashtra. This determines which scholarship scheme you qualify for and the amount you will receive.',
+    example: 'GEN — General (no reservation)\nOBC — Other Backward Class\nSC  — Scheduled Caste\nST  — Scheduled Tribe\nNT  — Nomadic Tribe\nSBC — Special Backward Class',
+    tip: 'Check your caste certificate to see exactly which category is written. Copy it exactly as written — do not guess or abbreviate differently.',
+    docs: ['Caste Certificate from Sub-Divisional Officer'],
+    voice: 'Marathi'
+  },
+  name: {
+    title: 'Full Name',
+    vernacular: 'पूर्ण नाव',
+    badge: 'Required · Field 1 of 14 · COMPLETED',
+    what: 'Enter your full name exactly as it appears on your Aadhaar card. Do not use nicknames or abbreviations. The name must match your Aadhaar, marksheet, and all other documents exactly.',
+    example: 'RAHUL RAMESH SHARMA\n(write in CAPITAL letters)',
+    tip: 'If your name is slightly different on different documents, use the Aadhaar card version — that is the one the government system checks against.',
+    voice: 'Hindi'
+  },
+  decl: {
+    title: 'Declaration & Signature',
+    vernacular: 'घोषणापत्र आणि सही',
+    badge: 'Required · Field 13 of 14 · Signature needed',
+    what: 'This section requires you to sign to confirm that all information you have filled in this form is true and correct to the best of your knowledge. Read the declaration text carefully before signing.',
+    example: 'Sign with your usual signature\n(same as on your Aadhaar card and bank records)',
+    tip: '⚠ Do NOT sign until you have finished filling the entire form and verified everything. A signed form is considered your final submission.',
+    voice: 'Marathi'
+  }
+};
+
+function selectField(id) {
+  const data = explanations[id];
+  if (!data) return;
+
+  document.getElementById('exp-title').textContent = data.title;
+  document.getElementById('exp-vernacular').textContent = data.vernacular;
+
+  let html = `
+    <div class="exp-block what">
+      <div class="exp-block-label">What is this?</div>
+      <div class="exp-block-body">${data.what}</div>
+    </div>
+    <div class="exp-block example">
+      <div class="exp-block-label">✅ Example</div>
+      <div class="exp-block-body" style="white-space:pre-line">${data.example}</div>
+    </div>
+    <div class="exp-block tip">
+      <div class="exp-block-label">💡 Tip</div>
+      <div class="exp-block-body">${data.tip}</div>
+    </div>`;
+
+  if (data.docs && data.docs.length) {
+    const docItems = data.docs.map(d => `<div class="doc-need-row">📎 &nbsp;${d}</div>`).join('');
+    html += `
+      <div class="exp-block docs">
+        <div class="exp-block-label">📎 Documents Needed</div>
+        <div class="exp-block-body" style="padding:0">${docItems}</div>
+      </div>`;
+  }
+
+  if (data.error) {
+    html += `
+      <div class="exp-block warn">
+        <div class="exp-block-label">⚠ Error Found</div>
+        <div class="exp-block-body">${data.error}</div>
+      </div>`;
+  }
+
+  html += `<button class="voice-exp-btn">🎙 &nbsp;Explain in ${data.voice || 'Hindi'}</button>`;
+
+  document.getElementById('exp-content').innerHTML = html;
+
+  // highlight selected field item
+  document.querySelectorAll('.field-item').forEach(el => {
+    el.classList.remove('fi-active');
+    el.querySelector('.fi-status')?.classList.remove('active');
+  });
+}
+
+// lang pill toggle
+document.querySelectorAll('.lang-pill').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.lang-pill').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// doc checklist interaction on results page
+document.addEventListener('click', e => {
+  const row = e.target.closest('.doc-row');
+  if (row) {
+    const chk = row.querySelector('.doc-chk');
+    chk.classList.toggle('checked');
+    chk.textContent = chk.classList.contains('checked') ? '✓' : '';
+  }
+});
+</script>
+
+</body>
+</html>
