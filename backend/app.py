@@ -32,6 +32,13 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 # Initialize Database
 db.init_db()
 
+@app.route("/")
+def home():
+    return {
+        "status": "success",
+        "message": "FormSathi Backend Running"
+    }
+
 import error_handler
 error_handler.register_error_handlers(app)
 
