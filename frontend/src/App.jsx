@@ -13,7 +13,7 @@ import CameraCapture from './components/CameraCapture';
 import SmartAssistant from './components/SmartAssistant';
 
 // Configure Axios defaults
-axios.defaults.baseURL = 'https://formsathi-ifyr.onrender.com';
+axios.defaults.baseURL = 'https://formsathi-production.up.railway.app';
 
 const highContrastStyles = `
   .high-contrast {
