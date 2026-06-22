@@ -1,12 +1,6 @@
 # Live Demo
-
 Check out the deployed version of the project here:
-
-https://formsathi-frontend.netlify.app/
-
-Backend API:
-
-https://formsathi-production.up.railway.app/
+formsathi-frontend.netlify.app
 
 # FormSathi – AI-Powered Intelligent Form Analysis System
 
