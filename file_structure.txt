@@ -1,0 +1,133 @@
+=========================================================
+                FormSathi Project File Structure
+=========================================================
+
+Project Name:
+FormSathi – AI-Powered Intelligent Form Analysis System
+
+Project Root
+│
+├── backend/
+│   │
+│   ├── __pycache__/
+│   │
+│   ├── uploads/
+│   │   ├── (Uploaded forms and documents)
+│   │
+│   ├── ai_provider.py
+│   │   ├── AI service configuration and provider integration
+│   │
+│   ├── app.py
+│   │   ├── Main Flask application
+│   │   ├── REST API endpoints
+│   │   ├── Server initialization
+│   │
+│   ├── cv_pipeline.py
+│   │   ├── OCR processing pipeline
+│   │
+│   ├── cv_pipeline.py.bak
+│   │   ├── Backup of OCR pipeline
+│   │
+│   ├── db.py
+│   │   ├── Database connection and operations
+│   │
+│   ├── error_handler.py
+│   │   ├── Centralized error handling
+│   │
+│   ├── export_service.py
+│   │   ├── Report export functionality
+│   │
+│   ├── formsaathi.db
+│   │   ├── SQLite database
+│   │
+│   ├── guidance_templates.py
+│   │   ├── AI guidance templates
+│   │
+│   ├── models.py
+│   │   ├── ML models and database models
+│   │
+│   ├── nixpacks.toml
+│   │   ├── Railway deployment configuration
+│   │
+│   ├── ocr_engine.py
+│   │   ├── EasyOCR engine
+│   │
+│   ├── ocr_engine.py.bak
+│   │   ├── Backup OCR engine
+│   │
+│   ├── requirements.txt
+│   │   ├── Python dependencies
+│   │
+│   ├── runtime.txt
+│   │   ├── Python runtime version
+│   │
+│   ├── unknown_fields.log
+│   │   ├── Unknown field detection logs
+│   │
+│   └── validation_engine.py
+│       ├── Form validation engine
+│
+├── frontend/
+│   │
+│   ├── dist/
+│   │   ├── Production build files
+│   │
+│   ├── node_modules/
+│   │   ├── Installed npm packages
+│   │
+│   ├── public/
+│   │   ├── Static assets
+│   │
+│   ├── src/
+│   │   │
+│   │   ├── assets/
+│   │   │   ├── Images
+│   │   │   ├── Icons
+│   │   │
+│   │   ├── components/
+│   │   │   ├── CameraCapture.jsx
+│   │   │   ├── SmartAssistant.jsx
+│   │   │   ├── Dashboard Components
+│   │   │   ├── Upload Components
+│   │   │
+│   │   ├── App.jsx
+│   │   │   ├── Main React application
+│   │   │
+│   │   ├── App.css
+│   │   │   ├── Global styling
+│   │   │
+│   │   ├── index.css
+│   │   │   ├── Base styles
+│   │   │
+│   │   └── main.jsx
+│   │       ├── React entry point
+│   │
+│   ├── .gitignore
+│   │
+│   ├── eslint.config.js
+│   │
+│   ├── index.html
+│   │
+│   ├── package.json
+│   │
+│   ├── package-lock.json
+│   │
+│   ├── postcss.config.js
+│   │
+│   ├── tailwind.config.js
+│   │
+│   ├── vite.config.js
+│   │
+│   └── README.md
+│
+├── .gitignore
+│
+├── formsaathi.html
+│   ├── Project overview page
+│
+├── technical_audit_report.md
+│   ├── Technical project documentation
+│
+└── README.md
+    ├── GitHub project documentation
+
