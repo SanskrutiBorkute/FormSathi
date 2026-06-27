@@ -1,0 +1,465 @@
+=========================================================
+                     FormSathi Notes
+=========================================================
+
+Project Name:
+FormSathi – AI-Powered Intelligent Form Analysis System
+
+Author:
+Sanskruti Borkute
+
+=========================================================
+1. Project Overview
+=========================================================
+
+FormSathi is an AI-powered web application that helps users understand, validate, and analyze various forms and documents. The system extracts text using OCR technology, identifies important fields, detects missing information, validates user inputs, and provides AI-generated guidance to simplify the form-filling process.
+
+The project consists of two major parts:
+
+• Frontend (React + Vite)
+• Backend (Flask + Python)
+
+The frontend provides a modern and interactive user interface, while the backend performs OCR, AI processing, validation, and report generation.
+
+=========================================================
+2. Features
+=========================================================
+
+• AI-powered form analysis
+• OCR-based text extraction
+• Upload PDF and image files
+• Intelligent field detection
+• Missing field identification
+• AI-generated form guidance
+• Validation engine
+• Export reports
+• Responsive user interface
+• Railway backend deployment
+• Netlify frontend deployment
+
+=========================================================
+3. Technologies Used
+=========================================================
+
+Frontend
+
+• React.js
+• Vite
+• HTML5
+• CSS3
+• Tailwind CSS
+• Axios
+• Lucide React
+• Recharts
+
+Backend
+
+• Python
+• Flask
+• EasyOCR
+• OpenCV
+• SQLite
+• Scikit-Learn
+• JWT
+• ReportLab
+
+Development Tools
+
+• VS Code
+• Git
+• GitHub
+• Railway
+• Netlify
+• Postman
+
+=========================================================
+4. Clone the Project
+=========================================================
+
+Clone the repository from GitHub.
+
+git clone <repository-url>
+
+Move inside the project folder.
+
+cd FormSathi
+
+=========================================================
+5. Backend Setup
+=========================================================
+
+Step 1
+
+Open the backend folder.
+
+cd backend
+
+Step 2
+
+Create a virtual environment.
+
+python -m venv .venv
+
+Step 3
+
+Activate the environment.
+
+Windows
+
+.venv\Scripts\activate
+
+Step 4
+
+Install dependencies.
+
+pip install -r requirements.txt
+
+Step 5
+
+Run the Flask server.
+
+python app.py
+
+Backend will start on
+
+http://localhost:8080
+
+=========================================================
+6. Frontend Setup
+=========================================================
+
+Open another terminal.
+
+Go inside frontend.
+
+cd frontend
+
+Install packages.
+
+npm install
+
+Run React.
+
+npm run dev
+
+The frontend will open at
+
+http://localhost:5173
+
+=========================================================
+7. Running the Complete Project
+=========================================================
+
+Start Backend
+
+python app.py
+
+Start Frontend
+
+npm run dev
+
+Open the browser.
+
+Visit
+
+http://localhost:5173
+
+=========================================================
+8. Railway Backend Deployment
+=========================================================
+
+Push the latest code to GitHub.
+
+Connect Railway with the GitHub repository.
+
+Set Root Directory
+
+backend
+
+Railway automatically installs all Python packages.
+
+Deployment URL
+
+https://formsathi-production.up.railway.app
+
+=========================================================
+9. Netlify Frontend Deployment
+=========================================================
+
+Connect GitHub repository.
+
+Choose frontend folder.
+
+Build command
+
+npm run build
+
+Publish directory
+
+dist
+
+Deployment URL
+
+https://formsathi-frontend.netlify.app
+
+=========================================================
+10. Project Workflow
+=========================================================
+
+Step 1
+
+User opens FormSathi.
+
+↓
+
+Step 2
+
+Upload a form or document.
+
+↓
+
+Step 3
+
+OCR extracts text.
+
+↓
+
+Step 4
+
+AI analyzes extracted content.
+
+↓
+
+Step 5
+
+Validation engine checks fields.
+
+↓
+
+Step 6
+
+Missing information is identified.
+
+↓
+
+Step 7
+
+AI provides guidance.
+
+↓
+
+Step 8
+
+User reviews suggestions.
+
+↓
+
+Step 9
+
+Export final report.
+
+=========================================================
+11. API Endpoints
+=========================================================
+
+GET /
+
+Returns backend status.
+
+POST /upload
+
+Uploads a form.
+
+POST /extract
+
+Extracts OCR text.
+
+POST /validate
+
+Validates form.
+
+POST /analyze
+
+Runs AI analysis.
+
+POST /export
+
+Exports generated report.
+
+=========================================================
+12. Folder Description
+=========================================================
+
+backend/
+
+Contains Flask server, OCR engine, AI processing, validation, database, and APIs.
+
+frontend/
+
+Contains React application, UI components, styling, and API integration.
+
+uploads/
+
+Stores uploaded files.
+
+formsaathi.db
+
+SQLite database.
+
+requirements.txt
+
+Python dependencies.
+
+package.json
+
+React dependencies.
+
+runtime.txt
+
+Python version.
+
+README.md
+
+Project documentation.
+
+=========================================================
+13. AI Modules
+=========================================================
+
+OCR Engine
+
+Extracts text using EasyOCR.
+
+Validation Engine
+
+Checks missing fields and validates entered data.
+
+AI Guidance
+
+Explains fields in simple language.
+
+Export Service
+
+Generates downloadable reports.
+
+=========================================================
+14. Deployment Platforms
+=========================================================
+
+Frontend
+
+Netlify
+
+Backend
+
+Railway
+
+Version Control
+
+GitHub
+
+=========================================================
+15. Troubleshooting
+=========================================================
+
+Problem
+
+Frontend cannot connect.
+
+Solution
+
+Verify Railway backend URL in App.jsx.
+
+-------------------------------------
+
+Problem
+
+OCR not detecting text.
+
+Solution
+
+Upload a clearer image.
+
+-------------------------------------
+
+Problem
+
+Backend not running.
+
+Solution
+
+Check Python installation and requirements.
+
+-------------------------------------
+
+Problem
+
+Module not found.
+
+Solution
+
+Run
+
+pip install -r requirements.txt
+
+-------------------------------------
+
+Problem
+
+React build fails.
+
+Solution
+
+Run
+
+npm install
+
+Then
+
+npm run build
+
+=========================================================
+16. Future Improvements
+=========================================================
+
+• Multi-language support
+
+• Voice assistance
+
+• Mobile application
+
+• Handwritten form recognition
+
+• Government form integration
+
+• Digital signature support
+
+• AI auto-fill suggestions
+
+• Cloud storage
+
+=========================================================
+17. Conclusion
+=========================================================
+
+FormSathi simplifies form understanding by combining OCR, Artificial Intelligence, and intelligent validation into a single platform. The application reduces errors, improves accessibility, and provides users with clear guidance for completing forms efficiently.
+
+=========================================================
+18. Project Repository
+=========================================================
+
+GitHub
+
+(Add your GitHub repository link here)
+
+Frontend
+
+https://formsathi-frontend.netlify.app
+
+Backend
+
+https://formsathi-production.up.railway.app
+
+=========================================================
+                     END OF NOTES
+=========================================================
